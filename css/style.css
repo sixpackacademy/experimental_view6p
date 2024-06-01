@@ -590,4 +590,9 @@ a:focus {
 }
 
 /* end footer section*/
+
+body.login-page {
+  background-color: #223f28;
+}
+
 /*# sourceMappingURL=style.css.map */
