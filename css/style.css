@@ -96,6 +96,7 @@ body {
 }
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+  display: flex;
   margin: 10px 30px;
   padding: 0;
   padding-bottom: 3px;
