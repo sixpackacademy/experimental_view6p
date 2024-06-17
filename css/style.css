@@ -590,4 +590,35 @@ a:focus {
 }
 
 /* end footer section*/
+
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("../images/login_pic.jpg");
+  
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.400);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  
+  
+}
+
+.login-form h1 {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+
 /*# sourceMappingURL=style.css.map */
