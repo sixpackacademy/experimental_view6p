@@ -438,8 +438,8 @@ a:focus {
 
 .contact_section {
   position: relative;
-  background-color: #223f28;
-  color: #ffffff;
+  background-color: #223f2800;
+  color: #000000;
 }
 
 .contact_section .heading_container {
