@@ -5,8 +5,8 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once 'vendor/autoload.php'; // Caminho para o arquivo autoload.php do Google Client
 
-    $client_id = '167388635862-87tucghlc8n09eifdnoh2h4m35aeqpc2.apps.googleusercontent.com';
-    $client_secret = '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';
+    $client_id = '';
+    $client_secret = '';
     $redirect_uri = 'http://localhost:8000/calendar.php'; // Substitua pela URL do seu script calendar.php
 
     // Configurar o cliente OAuth2
