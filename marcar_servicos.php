@@ -89,7 +89,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Six Pack Academy
             </span>
@@ -102,7 +102,7 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Log In</a>
+                  <a class="nav-link" href="login.php">Log In</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>

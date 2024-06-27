@@ -75,40 +75,40 @@
         <h1>Dashboard Admin - Sixpack Academy</h1>
     </div>
     <div class="sidebar">
-        <a href="clientes.html">Clientes</a>
-        <a href="#appointments">Marcações</a>
-        <a href="contacto.html">Contato</a>
+        <a href="clientes.php">Clientes</a>
+        <a href="marcacoes.php">Marcações</a>
+        <a href="contacto.php">Contato</a>
     </div>
     <div class="main-content">
         <div class="container-fluid">
-            <h2 style="margin-top: 50px; margin-bottom: 20px;" >Marcações Pendentes</h2>
+            <h2 style="margin-top: 50px; margin-bottom: 20px;" >Clientes</h2>
             <div style="border-radius: 5px;" class="table-responsive">
                 <table class="table table-dark table-striped">
                     <thead>
                         <tr>
                             <th>Nome do Cliente</th>
-                            <th>Serviço</th>
-                            <th>Data</th>
+                            <th>Email</th>
+                            <th>Num Telemovel</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>João Silva</td>
-                            <td>Fisioterapia desportiva</td>
-                            <td>2024-06-20</td>
+                            <td>joaosilvia@gmail.com</td>
+                            <td>914503123</td>
                             <td>
-                                <button class="btn btn-accept btn-sm">Aceitar</button>
-                                <button class="btn btn-reject btn-sm">Recusar</button>
+                                <button class="btn btn-accept btn-sm">Editar</button>
+                                <button class="btn btn-reject btn-sm">Apagar</button>
                             </td>
                         </tr>
                         <tr>
                             <td>Fabio Magalhaes</td>
-                            <td>Fisioterapia</td>
-                            <td>2024-06-24</td>
+                            <td>fabiomagalhaes@gmail.com</td>
+                            <td>912123123</td>
                             <td>
-                                <button class="btn btn-accept btn-sm">Aceitar</button>
-                                <button class="btn btn-reject btn-sm">Recusar</button>
+                                <button class="btn btn-accept btn-sm">Editar</button>
+                                <button class="btn btn-reject btn-sm">Apagar</button>
                             </td>
                         </tr>
                         <!-- Repetir para outras marcações pendentes -->

@@ -27,7 +27,7 @@
         <link href="css/responsive.css" rel="stylesheet" />
       </head>
       
-      <body> <!-- partial:index.partial.html --> 
+      <body> <!-- partial:index.partial.php --> 
 
         <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
       
@@ -37,28 +37,42 @@
             
            <h2><img src="images/logo_6pack.png" alt="Logo" class="logo"></h2> 
             
-           <h2>Login</h2>
+           <h2>Register</h2>
            <div class="form"> 
-            
-            <div class="inputBox"> 
       
-              <input type="text" required> <i>Identification Number</i> 
-       
-             </div>
+            <div class="inputBox"> 
+             <input type="text" required> <i>Username</i> 
+            </div> 
 
             <div class="inputBox"> 
-      
-             <input type="password" required> <i>Password</i> 
-      
+                <input type="text" required> <i>First Name</i> 
+            </div> 
+
+            <div class="inputBox"> 
+                <input type="text" required> <i>Last Name</i> 
+            </div> 
+            
+            <div class="inputBox"> 
+                <input type="email" required> <i>Email</i> 
             </div> 
       
-            <div class="links"> 
-              <a href="register.html">I dont have an account</a> 
+            <div class="inputBox"> 
+             <input type="password" required> <i>Password</i> 
+            </div> 
+
+            <div class="inputBox"> 
+                <input type="text" required> <i>Phone Number</i> 
+               </div> 
+      
+            <div class="links">
+                
+                    <a href="login.php">I already have an account</a> 
+                  
             </div> 
       
             <div class="inputBox"> 
       
-             <input type="submit" value="Login"> 
+             <input type="submit" value="Register"> 
       
             </div> 
       

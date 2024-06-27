@@ -75,9 +75,9 @@
         <h1>Gerir Contato - Sixpack Academy</h1>
     </div>
     <div class="sidebar">
-        <a href="clientes.html">Clientes</a>
-        <a href="marcacoes.html">Marcações</a>
-        <a href="contacto.html">Gerir Contato</a>
+        <a href="clientes.php">Clientes</a>
+        <a href="marcacoes.php">Marcações</a>
+        <a href="contacto.php">Contato</a>
     </div>
     <div class="main-content">
         <div class="container-fluid">
