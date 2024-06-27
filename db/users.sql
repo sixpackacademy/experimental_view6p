@@ -3,3 +3,5 @@ CREATE TABLE users (
     identification_number INT NOT NULL,
     password VARCHAR(255) NOT NULL
 );
+
+INSERT INTO users (id, identification_number, password) VALUES (1, 1875, 'tanjilkh');

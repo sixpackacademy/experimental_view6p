@@ -38,17 +38,18 @@
            <h2><img src="images/logo_6pack.png" alt="Logo" class="logo"></h2> 
             
            <h2>Login</h2>
+           <form action="login_action.php" method="POST">
            <div class="form"> 
             
             <div class="inputBox"> 
       
-              <input type="text" required> <i>Identification Number</i> 
+              <input type="text" name="identification_number" required> <i>Identification Number</i> 
        
              </div>
 
             <div class="inputBox"> 
       
-             <input type="password" required> <i>Password</i> 
+             <input type="password" name="password" required> <i>Password</i> 
       
             </div> 
       
@@ -65,6 +66,7 @@
            </div> 
       
           </div> 
+          </form>
       
          </div> 
       
