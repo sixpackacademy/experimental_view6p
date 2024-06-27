@@ -15,7 +15,8 @@
   <title>Six Pack Academy</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -154,9 +155,6 @@
                   <input type="datetime-local" class="form-control" name="datetime" id="datetime"
                     placeholder="Data e Hora" required />
                 </div>
-
-                <!-- campo oculto para enviar o token de acesso -->
-                <input type="hidden" name="access_token" value="<?php echo $_SESSION['access_token']; ?>" />
 
                 <div class="d-flex">
                   <button type="submit" class="btn btn-primary">

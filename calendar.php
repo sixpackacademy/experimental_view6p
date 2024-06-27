@@ -1,46 +1,46 @@
 <?php
 session_start();
-require_once 'google-api-php-client/vendor/autoload.php';
 
-// Configurar o cliente OAuth2
-$client = new Google_Client();
-$client->setClientId('SEU_CLIENT_ID'); // Substitua pelo seu Client ID
-$client->setClientSecret('SEU_CLIENT_SECRET'); // Substitua pelo seu Client Secret
-$client->setRedirectUri('http://localhost/seu_projeto/calendar.php'); // Substitua pelo seu Redirect URI
-$client->addScope(Google_Service_Calendar::CALENDAR);
+// Verificar se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require_once 'vendor/autoload.php'; // Caminho para o arquivo autoload.php do Google Client
 
-// Função para obter o token de acesso
-if (!isset($_GET['code'])) {
-    $auth_url = $client->createAuthUrl();
-    header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
-} else {
-    $client->authenticate($_GET['code']);
-    $_SESSION['access_token'] = $client->getAccessToken();
-    header('Location: ' . filter_var('calendar.php', FILTER_SANITIZE_URL));
-}
+    $client_id = '167388635862-87tucghlc8n09eifdnoh2h4m35aeqpc2.apps.googleusercontent.com';
+    $client_secret = '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';
+    $redirect_uri = 'http://localhost:8000/calendar.php'; // Substitua pela URL do seu script calendar.php
 
-// Definir credenciais do cliente
-if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-    $client->setAccessToken($_SESSION['access_token']);
-    $service = new Google_Service_Calendar($client);
+    // Configurar o cliente OAuth2
+    $client = new Google_Client();
+    $client->setClientId($client_id);
+    $client->setClientSecret($client_secret);
+    $client->setRedirectUri($redirect_uri);
+    $client->addScope(Google_Service_Calendar::CALENDAR);
+
+    // Token de acesso do formulário POST
+    $access_token = $_POST['access_token'];
+
+    // Configura o token de acesso
+    $client->setAccessToken($access_token);
 
     // Criar evento no Google Calendar
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $event = new Google_Service_Calendar_Event([
-            'summary' => $_POST['servico'],
-            'start' => [
-                'dateTime' => $_POST['datetime'],
-                'timeZone' => 'Europe/Lisbon',
-            ],
-            'end' => [
-                'dateTime' => $_POST['datetime'],
-                'timeZone' => 'Europe/Lisbon',
-            ],
-        ]);
+    $service = new Google_Service_Calendar($client);
 
-        $calendarId = 'primary';
-        $event = $service->events->insert($calendarId, $event);
-        echo 'Evento criado: ' . $event->htmlLink;
-    }
+    $event = new Google_Service_Calendar_Event([
+        'summary' => $_POST['servico'],
+        'start' => [
+            'dateTime' => $_POST['datetime'],
+            'timeZone' => 'Europe/Lisbon',
+        ],
+        'end' => [
+            'dateTime' => $_POST['datetime'],
+            'timeZone' => 'Europe/Lisbon',
+        ],
+    ]);
+
+    $calendarId = 'primary';
+    $event = $service->events->insert($calendarId, $event);
+    echo 'Evento criado: ' . $event->htmlLink;
+} else {
+    echo 'Formulário não submetido corretamente.';
 }
 ?>
