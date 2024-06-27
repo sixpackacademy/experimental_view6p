@@ -28,7 +28,8 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
   <style>
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       display: flex;
@@ -94,7 +95,8 @@
               Six Pack Academy
             </span>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -132,7 +134,7 @@
                   Marcar serviços
                 </h2>
               </div>
-              <form action="">
+              <form action="calendar.php" method="POST">
                 <div class="form-group">
                   <label for="servico">Serviço:</label>
                   <select class="form-control" name="servico" id="servico">
@@ -146,14 +148,18 @@
                     <option value="kinesio-taping">Kinesio Taping</option>
                   </select>
                 </div>
-                
+
                 <div class="form-group">
                   <label for="datetime">Data e Hora:</label>
-                  <input type="datetime-local" class="form-control" id="datetime" placeholder="Data e Hora" />
+                  <input type="datetime-local" class="form-control" name="datetime" id="datetime"
+                    placeholder="Data e Hora" required />
                 </div>
-                
+
+                <!-- campo oculto para enviar o token de acesso -->
+                <input type="hidden" name="access_token" value="<?php echo $_SESSION['access_token']; ?>" />
+
                 <div class="d-flex">
-                  <button class="btn btn-primary">
+                  <button type="submit" class="btn btn-primary">
                     Marcar serviço
                   </button>
                 </div>
