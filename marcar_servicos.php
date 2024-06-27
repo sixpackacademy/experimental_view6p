@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    // Se o usuário não está logado, redirecione para a página de login
+    header('Location: login.php');
+    exit();
+}
+$user_id = $_SESSION['user_id'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -134,7 +144,9 @@
                 <h2 id="contactenos">
                   Marcar serviços
                 </h2>
+                
               </div>
+              <p>ID do utilizador: <?php echo $user_id; ?></p>
               <form action="calendar.php" method="POST">
                 <div class="form-group">
                   <label for="servico">Serviço:</label>
