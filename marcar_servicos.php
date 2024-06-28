@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    // Se o usuário não está logado, redirecione para a página de login
+    header('Location: login.php');
+    exit();
+}
+$user_id = $_SESSION['user_id'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -102,7 +112,14 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Log In</a>
+                  <?php
+                  if(!isset($_SESSION['user_id'])) {
+                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                  } else {
+                    echo '<a class="nav-link" href="logout.php">Log Out</a>';
+                  }
+                  ?>
+                  
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
