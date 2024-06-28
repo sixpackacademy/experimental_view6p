@@ -97,18 +97,25 @@ if (isset($_SESSION['user_id'])) {
                       Six Pack Academy
                     </h1>
                     <p>
-                      O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
-                      Entre os serviços disponíveis, destacamos a
-                      
-                      <br> <button>Fisioterapia desportiva</button>
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
-                  
+                    A reabilitação desportiva é um campo especializado da fisioterapia que se concentra na recuperação 
+                    de atletas e praticantes de atividades físicas após lesões. O principal objetivo é restaurar a função física,
+                     minimizar a dor e o desconforto, e permitir que o indivíduo retorne ao seu nível máximo de desempenho esportivo 
+                     de maneira segura e eficaz.
+                   <br>
+                    O processo de reabilitação desportiva inclui uma avaliação detalhada da lesão e da 
+                    condição física do atleta, seguida pela elaboração de um plano de tratamento personalizado. 
+                    Esse plano pode envolver uma combinação de técnicas, como exercícios terapêuticos para fortalecer e 
+                    estabilizar os músculos, alongamentos para melhorar a flexibilidade, terapia manual para reduzir a dor e 
+                    a rigidez, e modalidades de eletroterapia para acelerar a cicatrização dos tecidos.
+                   <br>
+                    Além do tratamento das lesões, a reabilitação desportiva também enfatiza a prevenção de futuras lesões. 
+                    Isso pode incluir o ensino de técnicas adequadas de movimento, ajustes na rotina de treinamento,
+                     e a incorporação de exercícios de aquecimento e alongamento na rotina diária do atleta.
+                   <br>
+                    Os profissionais de reabilitação desportiva trabalham em estreita colaboração com treinadores, 
+                    médicos e outros especialistas para assegurar uma abordagem integrada e completa ao cuidado do atleta.
+                     Através de um programa de reabilitação bem-estruturado, os atletas podem não apenas se recuperar de lesões,
+                     mas também melhorar sua condição física geral, reduzindo o risco de novas lesões e prolongando suas carreiras esportivas.
                     </p>
                   </div>
                 </div>
