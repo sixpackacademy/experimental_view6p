@@ -100,14 +100,14 @@ if (isset($_SESSION['user_id'])) {
                       O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
                       Entre os serviços disponíveis, destacamos a
                       
-                      <br> <a href="fisio_desp.php">Fisioterapia desportiva</a>
-                      <br> <a href="fisio.php">Fisioterapia</a>
-                      <br> <a href="reabi_desp.php">Reabilitação desportiva</a>
-                      <br> <a href="aval_post.php">Avaliação postural</a>
-                      <br> <a href="massagem_relax.php">Massagem de relaxamento</a>
-                      <br> <a href="massagem_descont.php">Massagem descontrotaturante</a>
-                      <br> <a href="drenagem_linfatica.php">Drenagem linfática</a>
-                      <br> <a href="knesio_taping.php">Knesio taping</a>
+                      <br> <button>Fisioterapia desportiva</button>
+                      <br> Fisioterapia
+                      <br> Reabilitação desportiva
+                      <br> Avaliação postural
+                      <br> Massagem de relaxamento
+                      <br> Massagem descontrotaturante
+                      <br> Drenagem linfática
+                      <br> Knesio taping
                   
                     </p>
                   </div>
