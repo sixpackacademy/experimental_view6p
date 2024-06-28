@@ -97,18 +97,25 @@ if (isset($_SESSION['user_id'])) {
                       Six Pack Academy
                     </h1>
                     <p>
-                      O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
-                      Entre os serviços disponíveis, destacamos a
-                      
-                      <br> <button>Fisioterapia desportiva</button>
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
-                  
+                    A fisioterapia é uma ciência da saúde que se dedica ao estudo, 
+                    prevenção e tratamento de disfunções do movimento e funções corporais.
+                     Utilizando métodos e técnicas específicas, os fisioterapeutas avaliam,
+                      diagnosticam e intervêm em diversas condições que afetam o sistema musculoesquelético,
+                       neurológico, cardiorrespiratório e outras áreas.
+                  <br>
+                   Os profissionais de fisioterapia trabalham com uma ampla variedade de pacientes, desde recém-nascidos até idosos, 
+                  tratando problemas como lesões esportivas, doenças crônicas, disfunções neurológicas, dores articulares e musculares,
+                  e dificuldades respiratórias. As abordagens terapêuticas incluem exercícios específicos, terapias manuais, 
+                  uso de equipamentos eletroterapêuticos, orientações posturais e educação para a saúde.
+                  <br>
+                  Além do tratamento de condições existentes, a fisioterapia também se concentra na prevenção de problemas futuros, 
+                  promovendo hábitos de vida saudáveis e práticas de exercícios físicos adequados. 
+                  O objetivo é melhorar a qualidade de vida dos pacientes, proporcionando maior independência e funcionalidade nas 
+                  atividades diárias.
+                  <br>
+                  Em suma, a fisioterapia é uma profissão essencial para a manutenção e recuperação da saúde física, 
+                  ajudando a restaurar e otimizar o movimento e a funcionalidade, promovendo bem-estar e qualidade de vida.
+                  <br>
                     </p>
                   </div>
                 </div>

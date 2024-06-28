@@ -97,18 +97,13 @@ if (isset($_SESSION['user_id'])) {
                       Six Pack Academy
                     </h1>
                     <p>
-                      O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
-                      Entre os serviços disponíveis, destacamos a
-                      
-                      <br> <button>Fisioterapia desportiva</button>
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
-                  
+                    A fisioterapia desportiva é uma especialidade da fisioterapia focada na prevenção, diagnóstico, tratamento e reabilitação de lesões relacionadas à prática de esportes e atividades físicas. Esse ramo da fisioterapia é essencial para atletas e praticantes de atividades físicas, pois visa otimizar o desempenho esportivo e garantir uma recuperação rápida e eficaz após lesões.
+<br>
+Os fisioterapeutas desportivos utilizam uma combinação de técnicas manuais, exercícios terapêuticos, eletroterapia e outras modalidades para tratar problemas musculoesqueléticos, como entorses, distensões, fraturas e lesões de ligamentos e tendões. Além disso, eles desempenham um papel crucial na prevenção de lesões, oferecendo orientação sobre técnicas de treino adequadas, aquecimento, alongamento e fortalecimento muscular.
+<br>
+Outro aspecto importante da fisioterapia desportiva é o trabalho em equipe com outros profissionais de saúde, como médicos, treinadores e nutricionistas, para fornecer um cuidado integral ao atleta. Isso assegura que o tratamento seja personalizado e direcionado às necessidades específicas de cada indivíduo, ajudando-os a retornar ao esporte de maneira segura e eficiente. Em resumo, a fisioterapia desportiva é fundamental para promover a saúde e a performance dos atletas,
+ bem como para minimizar o risco de lesões e otimizar a reabilitação quando estas ocorrem.
+ <br>
                     </p>
                   </div>
                 </div>
