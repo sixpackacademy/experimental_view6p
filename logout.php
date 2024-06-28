@@ -7,7 +7,7 @@ unset($_SESSION['user_id']);
 session_destroy();
 
 // Include URL for Login page to login again.
-header("Location: login.html");
+header("Location: index.php");
 exit;
 ?>
 
