@@ -122,6 +122,9 @@ $user_id = $_SESSION['user_id'];
                   
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
                 </li>
                 <li class="nav-item">

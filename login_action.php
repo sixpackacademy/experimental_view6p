@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($user['password'] === $password){
             $_SESSION['user_id'] = $user['id'];
-            header('Location: index.php');
+            header('Location: marcar_servicos.php');
         } else {
             echo "Pass errada";
         }
