@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,7 +38,7 @@
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
-      <div class="container-fluid">
+      <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
@@ -44,23 +50,28 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <div class="ml-auto">
               <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                
-                </li>
-            
+  
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html"> Contacte nos</a>
+                <?php
+                  if(!isset($_SESSION['user_id'])) {
+                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                  } else {
+                    echo '<a class="nav-link" href="logout.php">Log Out</a>';
+                  }
+                  ?>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#servicos">Servicos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
               </ul>
-              <div class="user_option">
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form>
-              </div>
             </div>
           </div>
         </nav>
@@ -99,11 +110,6 @@
                       <br> Knesio taping
                   
                     </p>
-                    <div class="">
-                      <a href="">
-                        Contacte nos
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -121,7 +127,7 @@
   <section class="us_section layout_padding">
     <div class="container">
       <div class="heading_container">
-        <h2>
+        <h2 id="servicos">
           Os nossos serviços
         </h2>
       </div>
@@ -237,7 +243,7 @@
         <div class="col-lg-5 col-md-6">
           <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
             <div class="heading_container">
-              <h2>
+              <h2 id="contactenos">
                 Contacte nos
               </h2>
             </div>
