@@ -62,6 +62,9 @@
              <input type="submit" value="Login"> 
       
             </div> 
+            <div class="inputBox"> 
+                <a href="oauth2callback.php" class="btn btn-primary">Login with Google</a>
+            </div>
       
            </div> 
       
