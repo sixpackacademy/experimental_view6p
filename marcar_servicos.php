@@ -141,6 +141,7 @@ $user_id = $_SESSION['user_id'];
 
   <!-- contact section -->
   <div class="content-wrapper">
+    <h1>🚧 AINDA EM CONSTRUCAO 🚧</h1>
     <section class="contact_section">
       <div class="container-fluid">
         <div class="row">
