@@ -6,6 +6,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 $user_id = $_SESSION['user_id'];
+
+// Fazer a chamada à API de citações motivacionais
+$api_url = "https://api.quotable.io/random";
+$quote_data = json_decode(file_get_contents($api_url), true);
+
+$quote = $quote_data['content'];
+$author = $quote_data['author'];
 ?>
 
 <!DOCTYPE html>
@@ -90,6 +97,13 @@ $user_id = $_SESSION['user_id'];
       background-color: #218838;
       border-color: #1e7e34;
     }
+
+    .quote {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e9ecef;
+      border-radius: 8px;
+    }
   </style>
 </head>
 
@@ -119,7 +133,6 @@ $user_id = $_SESSION['user_id'];
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                   }
                   ?>
-                  
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
@@ -141,7 +154,6 @@ $user_id = $_SESSION['user_id'];
 
   <!-- contact section -->
   <div class="content-wrapper">
-    <h1>🚧 AINDA EM CONSTRUCAO 🚧</h1>
     <section class="contact_section">
       <div class="container-fluid">
         <div class="row">
@@ -179,6 +191,11 @@ $user_id = $_SESSION['user_id'];
                   </button>
                 </div>
               </form>
+              <div class="quote">
+                <h4>Citação Motivacional</h4>
+                <p>"<?php echo $quote; ?>"</p>
+                <p><em>- <?php echo $author; ?></em></p>
+              </div>
             </div>
           </div>
         </div>
