@@ -1,11 +1,37 @@
 <?php
+require_once 'vendor/autoload.php';
+
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    // Se o usuário não está logado, redirecione para a página de login
-    header('Location: login.php');
+
+if (!isset($_SESSION['access_token'])) {
+    header('Location: oauth2callback.php');
     exit();
 }
-$user_id = $_SESSION['user_id'];
+
+$client = new Google_Client();
+$client->setAuthConfig('credentials.json');
+$client->addScope(Google_Service_Calendar::CALENDAR);
+$client->setAccessToken($_SESSION['access_token']);
+
+$service = new Google_Service_Calendar($client);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $event = new Google_Service_Calendar_Event([
+        'summary' => $_POST['servico'],
+        'start' => [
+            'dateTime' => $_POST['datetime'],
+            'timeZone' => 'America/Sao_Paulo',
+        ],
+        'end' => [
+            'dateTime' => date('c', strtotime($_POST['datetime'] . ' +1 hour')),
+            'timeZone' => 'America/Sao_Paulo',
+        ],
+    ]);
+
+    $calendarId = 'primary';
+    $event = $service->events->insert($calendarId, $event);
+    echo 'Evento criado: ' . $event->htmlLink;
+}
 ?>
 
 <!DOCTYPE html>
@@ -153,32 +179,32 @@ $user_id = $_SESSION['user_id'];
                   Marcar serviços
                 </h2>
               </div>
-              <form action="">
-                <div class="form-group">
-                  <label for="servico">Serviço:</label>
-                  <select class="form-control" name="servico" id="servico">
-                    <option value="fisioterapia">Fisioterapia</option>
-                    <option value="fisioterapia-desportiva">Fisioterapia Desportiva</option>
-                    <option value="reabilitacao-desportiva">Reabilitação Desportiva</option>
-                    <option value="avaliacao-postural">Avaliação Postural</option>
-                    <option value="massagem-relaxamento">Massagem de Relaxamento</option>
-                    <option value="massagem-desconstraturante">Massagem Desconstruturante</option>
-                    <option value="drenagem-linfatica">Drenagem Linfática</option>
-                    <option value="kinesio-taping">Kinesio Taping</option>
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label for="datetime">Data e Hora:</label>
-                  <input type="datetime-local" class="form-control" id="datetime" placeholder="Data e Hora" />
-                </div>
-                
-                <div class="d-flex">
-                  <button class="btn btn-primary">
-                    Marcar serviço
-                  </button>
-                </div>
-              </form>
+              <form action="marcar_servicos.php" method="post">
+    <div class="form-group">
+        <label for="servico">Serviço:</label>
+        <select class="form-control" name="servico" id="servico" required>
+            <option value="fisioterapia">Fisioterapia</option>
+            <option value="fisioterapia-desportiva">Fisioterapia Desportiva</option>
+            <option value="reabilitacao-desportiva">Reabilitação Desportiva</option>
+            <option value="avaliacao-postural">Avaliação Postural</option>
+            <option value="massagem-relaxamento">Massagem de Relaxamento</option>
+            <option value="massagem-desconstraturante">Massagem Desconstruturante</option>
+            <option value="drenagem-linfatica">Drenagem Linfática</option>
+            <option value="kinesio-taping">Kinesio Taping</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="datetime">Data e Hora:</label>
+        <input type="datetime-local" class="form-control" name="datetime" id="datetime" required />
+    </div>
+
+    <div class="d-flex">
+        <button class="btn btn-primary" type="submit">
+            Marcar serviço
+        </button>
+    </div>
+</form>
             </div>
           </div>
         </div>

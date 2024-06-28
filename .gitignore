@@ -2,5 +2,5 @@
 *.pdf
 *.docx
 *.txt
-apicalendar.json
+credentials.json
 /vendor
