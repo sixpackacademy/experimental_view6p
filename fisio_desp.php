@@ -66,6 +66,9 @@ if (isset($_SESSION['user_id'])) {
     .content-container .service_button{
       content-justify: center;
     }
+    .content-container .hover{
+
+    }
      
 .button-57 {
   position: relative;
@@ -194,7 +197,7 @@ if (isset($_SESSION['user_id'])) {
     </div>
     
   </div>
-  <div class="">
+  <div style="text-align: center">
 <button class="button-57" role="button"><span class="text">Fisioterapia Desportiva</span><span>Marcar <br> Agora</span></button>
 
 
