@@ -39,11 +39,15 @@ if (isset($_SESSION['user_id'])) {
       align-items: center;
       padding: 50px;
       color: white; 
+      margin-top: 80px;
     }
     .content-container .text {
       flex: 1;
       padding-right: 20px;
       font-size: 30px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px black;
     }
     .content-container .image {
       flex: 1;
@@ -51,9 +55,82 @@ if (isset($_SESSION['user_id'])) {
       justify-content: flex-end;
     }
     .content-container .image img {
-      max-width: 100%;
+      max-width: 97%;
       border-radius: 20px;
+      height: 475px;
+      box-shadow: 10px 10px 20px black;
     }
+    .content-container .words{
+    padding: 20px;
+    }
+    .content-container .service_button{
+      content-justify: center;
+    }
+     
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 0px solid #18181a;
+  color: #18181a;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 5px;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+    
   </style>
 </head>
 
@@ -63,7 +140,7 @@ if (isset($_SESSION['user_id'])) {
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Six Pack Academy
             </span>
@@ -103,17 +180,25 @@ if (isset($_SESSION['user_id'])) {
 
   <div class="content-container">
     <div class="text">
+      <div class="words">
       <h1>Sobre a Fisioterapia Desportiva</h1>
       <br><br>
       <p>
         A fisioterapia desportiva é uma especialidade da fisioterapia que atua na prevenção e tratamento de lesões relacionadas com a prática desportiva.
         O principal objetivo é ajudar os atletas a recuperar rapidamente de lesões e a melhorar a sua performance.
       </p>
+      </div>
     </div>
     <div class="image">
       <img src="images/fisio_desp2.png" alt="Fisioterapia Desportiva">
     </div>
+    
   </div>
+  <div class="">
+<button class="button-57" role="button"><span class="text">Fisioterapia Desportiva</span><span>Marcar <br> Agora</span></button>
+
+
+    </div>
   </div>
 
 

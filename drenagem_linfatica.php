@@ -40,8 +40,8 @@ if (isset($_SESSION['user_id'])) {
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
+        <a class="navbar-brand" href="index.php">
+        <span>
               Six Pack Academy
             </span>
           </a>

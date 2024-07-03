@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "RicardoMagalhaes2004";
 $dbname = "view6pa";
 // Criar a conexão
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -12,3 +12,4 @@ if ($conn->connect_error) {
 }
 
 echo "Conectado!";
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'RicardoMagalhaes2004';

@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Six Pack Academy
             </span>
@@ -100,7 +100,7 @@ if (isset($_SESSION['user_id'])) {
                       O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
                       Entre os serviços disponíveis, destacamos a
                       
-                      <br> <a href="fisio_desp.php">Fisioterapia desportiva</a>
+                      <br> <a href="fisio_desp.php">Fisioterapia Desportiva</a>
                       <br> <a href="fisio.php">Fisioterapia</a>
                       <br> <a href="reabi_desp.php">Reabilitação desportiva</a>
                       <br> <a href="aval_post.php">Avaliação postural</a>
