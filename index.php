@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Six Pack Academy
             </span>
@@ -100,14 +100,14 @@ if (isset($_SESSION['user_id'])) {
                       O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
                       Entre os serviços disponíveis, destacamos a
                       
-                      <br> Fisioterapia desportiva
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
+                      <br> <a href="fisio_desp.php">Fisioterapia Desportiva</a>
+                      <br> <a href="fisio.php">Fisioterapia</a>
+                      <br> <a href="reabi_desp.php">Reabilitação desportiva</a>
+                      <br> <a href="aval_post.php">Avaliação postural</a>
+                      <br> <a href="massagem_relax.php">Massagem de relaxamento</a>
+                      <br> <a href="massagem_descont.php">Massagem descontrotaturante</a>
+                      <br> <a href="drenagem_linfatica.php">Drenagem linfática</a>
+                      <br> <a href="knesio_taping.php">Knesio taping</a>
                   
                     </p>
                   </div>
@@ -278,7 +278,7 @@ if (isset($_SESSION['user_id'])) {
   <section class="info_section layout_padding2">
     <div class="container">
       <div class="info_items">
-        <a href="">
+        <a href="https://www.google.pt/maps/place/R.+de+Faria+Guimar%C3%A3es+753,+4200-077+Porto/@41.1667026,-8.6116752,54m/data=!3m1!1e3!4m6!3m5!1s0xd24645737f8f6bb:0xe04f403174ccf745!8m2!3d41.1638469!4d-8.6065284!16s%2Fg%2F11c2h3wzmj?entry=ttu">
           <div class="item ">
             <div class="img-box box-1">
               <img src="" alt="">
