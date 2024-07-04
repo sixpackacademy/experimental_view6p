@@ -262,14 +262,14 @@ table {
     border-collapse: collapse;
 }
 
-th,
+th, 
 td {
     text-align: left;
     padding: 8px;
 }
 
 th {
-    background: #f4f6f8;
+    background: #9bf1a0;
 }
 
 tr:nth-child(even) {
