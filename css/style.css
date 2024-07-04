@@ -74,19 +74,6 @@ body {
   background-attachment: fixed;
 }
 
-.hero_area_fisio_desp {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-          background-image: url(../images/fisio_desp.png);
-  background-size: cover;
-  background-attachment: fixed;
-}
 .sub_page .hero_area {
   height: auto;
 }
@@ -117,7 +104,13 @@ body {
   position: relative;
   text-transform: uppercase;
   font-size: 15px;
+  transition: transform 0.2s ease;  /* Add transition for smooth effect */
 }
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link:hover {
+  transform: scale(1.5);  /* Scale the text on hover */
+}
+
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link::after {
   display: none;
@@ -131,10 +124,6 @@ body {
   background-color: #ffffff;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active a::after, .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item:hover a::after {
-  display: block;
-  background-color: #3EAF3C;
-}
 
 a,
 a:hover,
@@ -655,8 +644,8 @@ ul li:hover {
 ul li:before {
   content: "";
   position: absolute;
-  inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
-  background: #ce4f20; /* the color */
+  inset: calc(100% - 5px) 0 0 0; /* 3px = the thickness */
+  background: #1b8606; /* the color */
   scale: 0 1;
   transition: .3s, translate 0s .3s;
 }
