@@ -32,16 +32,135 @@ if (isset($_SESSION['user_id'])) {
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+
+.hero_area_massagem_descont{
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          background-image: url(../images/massagem_descont.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+    
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      color: white; 
+      margin-top: 80px;
+    }
+    .content-container .text {
+      flex: 1;
+      padding-right: 20px;
+      font-size: 30px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px black;
+    }
+    .content-container .image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .content-container .image img {
+      max-width: 97%;
+      border-radius: 20px;
+      height: 475px;
+      width: 800px;
+      box-shadow: 10px 10px 20px black;
+    }
+    .content-container .words{
+    padding: 20px;
+    }
+    .content-container .service_button{
+      content-justify: center;
+    }
+    .content-container .hover{
+      
+    }
+     
+    .button-57 {
+      position: relative;
+      overflow: hidden;
+      border: 0px solid #18181a;
+      color: #18181a;
+      display: inline-block;
+      font-size: 15px;
+      line-height: 30px;
+      padding: 18px 18px 17px;
+      text-decoration: none;
+      cursor: pointer;
+      background: #fff;
+      user-select: none;
+      webkit-user-select: none;
+      touch-action: manipulation;
+      border-radius: 5px;
+      }
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+  </style>
 </head>
 
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
+  <div class="hero_area_massagem_descont">
+    <!-- header section starts -->
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.php">
-        <span>
+          <a class="navbar-brand" href="index.php">
+            <span>
               Six Pack Academy
             </span>
           </a>
@@ -52,10 +171,9 @@ if (isset($_SESSION['user_id'])) {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ml-auto">
               <ul class="navbar-nav  ">
-  
                 <li class="nav-item">
-                <?php
-                  if(!isset($_SESSION['user_id'])) {
+                  <?php
+                  if (!isset($_SESSION['user_id'])) {
                     echo '<a class="nav-link" href="login.html">Log In</a>';
                   } else {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
@@ -63,7 +181,7 @@ if (isset($_SESSION['user_id'])) {
                   ?>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
+                  <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
@@ -78,158 +196,38 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class=" slider_section position-relative">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="col-lg-10 col-md-11 mx-auto">
-                <div class="detail-box">
-                  <div>
-                    <h3>
-                      Fitness
-                    </h3>
-                    <h2>
-                      Serviços
-                    </h2>
-                    <h1>
-                      Six Pack Academy
-                    </h1>
-                    <p>
-                      O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
-                      Entre os serviços disponíveis, destacamos a
-                      
-                      <br> <button>Fisioterapia desportiva</button>
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
-                  
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      
+
+  <div class="content-container">
+    <div class="text">
+      <div class="words">
+      <h1>Sobre a Massagem Descontraturante</h1>
+      <br><br>
+      <p>
+      A massagem descontraturante é uma técnica que visa aliviar tensões e contraturas musculares, utilizando pressão firme e movimentos específicos. Ela melhora a circulação, reduz a dor e promove o relaxamento profundo dos músculos. É indicada para tratar dores musculares crônicas e tensões acumuladas.
+</p>
       </div>
-    </section>
-    <!-- end slider section -->
+    </div>
+    <div class="image">
+      <img src="images/massagem_descont2.png" alt="Massagem Descontraturante">
+    </div>
+    
+  </div>
+  <div style="text-align: center">
+<button class="button-57" role="button"><span class="text">Massagem Descontraturante</span><span>Marcar <br> Agora</span></button>
+
+
+    </div>
   </div>
 
 
   <!-- Us section -->
 
-  <section class="us_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2 id="servicos">
-          Os nossos serviços
-        </h2>
-      </div>
-
-      <div class="us_container ">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/physiotherapist.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  FISIOTERAPIA DESPORTIVA
-                </h5>
-                <p>
-                  Tratamento e prevenção de lesões relacionadas com a prática de atividade física e desporto.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/dumbell.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  REABILITAÇÃO DESPORTIVA
-                </h5>
-                <p>
-                  Processo de recuperação de lesões ou doenças que afetam a performance atlética.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/av_postural.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  AVALIAÇÃO POSTURAL
-                </h5>
-                <p>
-                  Análise da postura e do alinhamento do corpo para identificar desequilíbrios e anomalias.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="box">
-              <div class="img-box">
-                <img src="images/massage.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  DRENAGEM LINFÁTICA
-                </h5>
-                <p>
-                  Massagem que ajuda a estimular o sistema linfático e promover a eliminação de toxinas do corpo.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- end us section -->
-
 
   <!-- heathy section -->
 
-  <section class="heathy_section layout_padding">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-12 mx-auto">
-          <div class="detail-box">
-            <h2>
-              HEALTHY MIND, HEALTHY BODY
-            </h2>
-            <p>
-              No Ginásio Six Pack, valorizamos a conexão entre a mente e o corpo. 
-              Uma mente saudável é essencial para um corpo saudável. 
-              Oferecemos serviços que promovem o equilíbrio mental e físico, ajudando-o a viver de forma mais harmoniosa e saudável. 
-              Invista no seu bem-estar integral connosco.            
-            </p>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- end heathy section -->
 
-  
   <!-- contact section -->
 
   <section class="contact_section ">
@@ -323,7 +321,7 @@ if (isset($_SESSION['user_id'])) {
   <!-- footer section -->
   <footer class="container-fluid footer_section">
     <p>
-      &copy; 2024 All Rights Reserved. 
+      &copy; 2024 All Rights Reserved.
       <a href="https://www.consumidor.gov.pt/livro-de-reclamacoes.aspx">Livro de reclamações</a>
     </p>
   </footer>
