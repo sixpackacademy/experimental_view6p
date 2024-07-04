@@ -34,7 +34,7 @@ if (isset($_SESSION['user_id'])) {
   <link href="css/responsive.css" rel="stylesheet" />
   <style>
 
-.hero_area_fisio_desp {
+.hero_area_aval_post {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,7 +153,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-  <div class="hero_area_fisio_desp">
+  <div class="hero_area_aval_post">
     <!-- header section starts -->
     <header class="header_section">
       <div class="container-fluid ">

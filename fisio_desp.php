@@ -33,6 +33,21 @@ if (isset($_SESSION['user_id'])) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <style>
+
+.hero_area_fisio_desp {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          background-image: url(../images/fisio_desp.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
     .content-container {
       display: flex;
       justify-content: space-between;
@@ -58,6 +73,7 @@ if (isset($_SESSION['user_id'])) {
       max-width: 97%;
       border-radius: 20px;
       height: 475px;
+      width: 800px;
       box-shadow: 10px 10px 20px black;
     }
     .content-container .words{

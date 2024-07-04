@@ -278,7 +278,7 @@ if (isset($_SESSION['user_id'])) {
   <section class="info_section layout_padding2">
     <div class="container">
       <div class="info_items">
-        <a href="">
+        <a href="https://www.google.pt/maps/place/R.+de+Faria+Guimar%C3%A3es+753,+4200-077+Porto/@41.1667026,-8.6116752,54m/data=!3m1!1e3!4m6!3m5!1s0xd24645737f8f6bb:0xe04f403174ccf745!8m2!3d41.1638469!4d-8.6065284!16s%2Fg%2F11c2h3wzmj?entry=ttu">
           <div class="item ">
             <div class="img-box box-1">
               <img src="" alt="">
