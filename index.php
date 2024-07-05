@@ -63,9 +63,6 @@ if (isset($_SESSION['user_id'])) {
                   ?>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
                 </li>
                 <li class="nav-item">
@@ -96,19 +93,19 @@ if (isset($_SESSION['user_id'])) {
                     <h1>
                       Six Pack Academy
                     </h1>
-                    <p>
+                    <p> 
                       O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
                       Entre os serviços disponíveis, destacamos a
-                      
-                      <br> <a href="fisio_desp.php">Fisioterapia Desportiva</a>
-                      <br> <a href="fisio.php">Fisioterapia</a>
-                      <br> <a href="reabi_desp.php">Reabilitação desportiva</a>
-                      <br> <a href="aval_post.php">Avaliação postural</a>
-                      <br> <a href="massagem_relax.php">Massagem de relaxamento</a>
-                      <br> <a href="massagem_descont.php">Massagem descontrotaturante</a>
-                      <br> <a href="drenagem_linfatica.php">Drenagem linfática</a>
-                      <br> <a href="knesio_taping.php">Knesio taping</a>
-                  
+                      <div class="button-container">
+                      <a href="fisio_desp.php">Fisioterapia Desportiva</a>
+                      <a href="fisio.php">Fisioterapia</a>
+                      <a href="reabi_desp.php">Reabilitação desportiva</a>
+                      <a href="aval_post.php">Avaliação postural</a>
+                      <a href="massagem_relax.php">Massagem de relaxamento</a>
+                      <a href="massagem_descont.php">Massagem descontrotaturante</a>
+                      <a href="drenagem_linfatica.php">Drenagem linfática</a>
+                      <a href="knesio_taping.php">Knesio taping</a>
+                      <div>
                     </p>
                   </div>
                 </div>
