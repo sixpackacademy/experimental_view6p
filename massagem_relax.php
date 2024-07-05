@@ -174,7 +174,7 @@ if (isset($_SESSION['user_id'])) {
                 <li class="nav-item">
                   <?php
                   if (!isset($_SESSION['user_id'])) {
-                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                    echo '<a class="nav-link" href="login.php">Log In</a>';
                   } else {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                   }
@@ -200,10 +200,11 @@ if (isset($_SESSION['user_id'])) {
   <div class="content-container">
     <div class="text">
       <div class="words">
-      <h1>Sobre a Massagem Descontraturante</h1>
+      <h1>Sobre a Massagem de Relaxamento</h1>
       <br><br>
       <p>
-      A massagem descontraturante é uma técnica que visa aliviar tensões e contraturas musculares, utilizando pressão firme e movimentos específicos. Ela melhora a circulação, reduz a dor e promove o relaxamento profundo dos músculos. É indicada para tratar dores musculares crônicas e tensões acumuladas.      </div>
+      A massagem de relaxamento é uma técnica terapêutica que utiliza movimentos suaves e ritmados para aliviar tensões musculares e promover o bem-estar geral. Ela ajuda a reduzir o estresse, melhorar a circulação e induzir um estado profundo de relaxamento. É uma prática popular para melhorar a saúde mental e física.      </p>
+      </div>
     </div>
     <div class="image">
       <img src="images/massagem_relax2.jpg" alt="Fisioterapia Desportiva">
