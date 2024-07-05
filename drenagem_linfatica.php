@@ -208,7 +208,7 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </div>
     <div class="image">
-      <img src="images/drenagem2.pngs" alt="Fisioterapia Desportiva">
+      <img src="images/drenagem2.png" alt="Fisioterapia Desportiva">
     </div>
     
   </div>
