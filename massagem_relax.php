@@ -212,8 +212,12 @@ if (isset($_SESSION['user_id'])) {
     
   </div>
   <div style="text-align: center">
-<button class="button-57" role="button"><span class="text">Massagem Relaxante</span><span>Marcar <br> Agora</span></button>
-
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tanjilkh/massagem-relaxante'});return false;"><button class="button-57" role="button"><span class="text">Massagem Relaxante</span><span>Marcar <br> Agora</span></button>
+</a>
+<!-- Calendly link widget end -->
 
     </div>
   </div>
