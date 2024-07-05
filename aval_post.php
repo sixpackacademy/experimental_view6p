@@ -73,6 +73,7 @@ if (isset($_SESSION['user_id'])) {
       max-width: 97%;
       border-radius: 20px;
       height: 475px;
+      width: 800px;
       box-shadow: 10px 10px 20px black;
     }
     .content-container .words{
@@ -173,7 +174,7 @@ if (isset($_SESSION['user_id'])) {
                 <li class="nav-item">
                   <?php
                   if (!isset($_SESSION['user_id'])) {
-                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                    echo '<a class="nav-link" href="login.php">Log In</a>';
                   } else {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                   }

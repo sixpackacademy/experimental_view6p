@@ -128,7 +128,7 @@ $author = $quote_data['author'];
                 <li class="nav-item">
                   <?php
                   if(!isset($_SESSION['user_id'])) {
-                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                    echo '<a class="nav-link" href="login.php">Log In</a>';
                   } else {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                   }
