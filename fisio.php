@@ -179,13 +179,7 @@ if (isset($_SESSION['user_id'])) {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                   }
                   ?>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#servicos">Servicos</a>
-                </li>
+                </li>        
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
