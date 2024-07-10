@@ -178,7 +178,7 @@
 
             responseForm.addEventListener('submit', function (event) {
                 event.preventDefault();
-                alert('Resposta enviada: ' + document.getElementById('responseMessage').value);
+                // alert('Resposta enviada: ' + document.getElementById('responseMessage').value);
                 modal.style.display = "none";
             });
         });
@@ -230,12 +230,36 @@
     responseForm.addEventListener('submit', function (event) {
         event.preventDefault();
         // Lógica para enviar a resposta
-        alert('Resposta enviada para ' + clientEmailInput.value);
+        // alert('Resposta enviada para ' + clientEmailInput.value);
         modal.style.display = 'none';
     });
 
     document.querySelector('#reviews').classList.add('active');
     document.querySelector('#reviews-section').classList.remove('hidden');
+});
+// Dentro do evento 'submit' do formulário de resposta
+responseForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    // Obter os valores necessários para a resposta
+    const clientEmail = document.getElementById('clientEmail').value;
+    const responseMessage = document.getElementById('responseMessage').value;
+    
+    // Aqui você pode adicionar a lógica para enviar a resposta para o cliente
+    
+    // Exemplo de alerta para demonstrar o envio (pode ser removido)
+    // alert('Resposta enviada para ' + clientEmail);
+    
+    // Construir a URL do Gmail com os parâmetros preenchidos
+    const emailSubject = encodeURIComponent('Resposta à sua mensagem');
+    const emailBody = encodeURIComponent(responseMessage);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${clientEmail}&su=${emailSubject}&body=${emailBody}`;
+    
+    // Abrir o Gmail em uma nova janela/tab
+    window.open(gmailUrl, '_blank');
+    
+    // Fechar o modal após o envio
+    modal.style.display = 'none';
 });
 
 </script>
