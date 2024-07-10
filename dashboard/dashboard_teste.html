@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div id="responseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Responder ao Cliente</h2>
+            <form id="responseForm">
+                <label for="clientName">Cliente:</label>
+                <input type="text" id="clientName" name="clientName" readonly>
+                <label for="responseMessage">Mensagem:</label>
+                <textarea id="responseMessage" name="responseMessage" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <a href="/" class="logo">SixPack<span>Academy</span></a>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="#" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>
+                <i class='bx bx-menu'></i>
+                Dashboard
+            </h1>
+
+            <div class="user">
+                <img src="/uploads/{{foto_perfil}}">
+                <div>
+                    <h4>{{nome_cliente}}</h4>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <main id="reviews-section">
+            <div class="reviews">
+                <div class="recent-reviews">
+                    <div class="header">
+                        <h2></h2>
+                        <button class="see-all">Ver Tudo →</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Email</th>
+                                <th>Data</th>
+                                <th>Serviço</th>
+                                <th>Mensagem</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Luís Monte Negro</td>
+                                <td>luismontenegro@gmail.com</td>
+                                <td>2024-06-01</td>
+                                <td>Massagem Relaxante</td>
+                                <td>Gostei muita da massagem e muito profiissional</td>
+                                <td><button class="approve-btn" data-client="Luís Monte Negro" data-service="Massagem Relaxante">Responder</button></td>
+                            </tr>
+                            <tr>
+                                <td>Tanjil</td>
+                                <td>tanjilkh@gmail.com</td>
+                                <td>2024-07-01</td>
+                                <td>Fisioterapia Desportiva</td>
+                                <td>Sinto me melhor após a realização do serviço</td>
+                                <td><button class="approve-btn" data-client="Tanjil" data-service="Fisioterapia Desportiva">Responder</button></td>
+                            </tr>
+                            <tr>
+                                <td>Ricardo</td>
+                                <td>ricardont@gmail.com</td>
+                                <td>2024-07-02</td>
+                                <td>Fisioterapia</td>
+                                <td>Está disponivel nos dias de sabado?</td>
+                                <td><button class="approve-btn" data-client="Ricardo" data-service="Fisioterapia">Responder</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </main>
+
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="responseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Responder ao Cliente</h2>
+            <form id="responseForm">
+                <label for="clientName">Cliente:</label>
+                <input type="text" id="clientName" name="clientName" readonly>
+                <label for="responseMessage">Mensagem:</label>
+                <textarea id="responseMessage" name="responseMessage" rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+            const mainContentSections = document.querySelectorAll('.main-content > main');
+            const modal = document.getElementById("responseModal");
+            const closeModal = document.querySelector(".modal .close");
+            const responseButtons = document.querySelectorAll('.approve-btn');
+            const modalClientInfo = document.getElementById('modalClientInfo');
+            const responseForm = document.getElementById('responseForm');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // Remove active class from all links
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+
+                    // Add active class to the clicked link
+                    this.classList.add('active');
+
+                    // Hide all sections
+                    mainContentSections.forEach(section => section.classList.add('hidden'));
+
+                    // Get the target ID from the clicked link
+                    const targetId = this.getAttribute('id') + '-section';
+
+                    // Section Select
+                    const targetSection = document.querySelector(`#${targetId}`);
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Shows dashboard as initial active
+            document.querySelector('#dashboard').classList.add('active');
+            document.querySelector('#dashboard-section').classList.remove('hidden');
+
+            responseButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const client = this.getAttribute('data-client');
+                    const service = this.getAttribute('data-service');
+                    modalClientInfo.textContent = `Cliente: ${client}, Serviço: ${service}`;
+                    modal.style.display = "block";
+                });
+            });
+
+            closeModal.addEventListener('click', function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            responseForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Resposta enviada: ' + document.getElementById('responseMessage').value);
+                modal.style.display = "none";
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+    const mainContentSections = document.querySelectorAll('.main-content > main');
+    const modal = document.getElementById('responseModal');
+    const closeModal = document.querySelector('.close');
+    const responseButtons = document.querySelectorAll('.approve-btn');
+    const clientNameInput = document.getElementById('clientName');
+    const responseForm = document.getElementById('responseForm');
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            sidebarLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+            mainContentSections.forEach(section => section.classList.add('hidden'));
+            const targetId = this.getAttribute('id') + '-section';
+            const targetSection = document.querySelector(`#${targetId}`);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+        });
+    });
+
+    responseButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const clientRow = this.closest('tr');
+            const clientName = clientRow.querySelector('td:nth-child(1)').textContent;
+            clientNameInput.value = clientName;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    responseForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Lógica para enviar a resposta
+        alert('Resposta enviada para ' + clientNameInput.value);
+        modal.style.display = 'none';
+    });
+
+    document.querySelector('#reviews').classList.add('active');
+    document.querySelector('#reviews-section').classList.remove('hidden');
+});
+
+</script>
+</body>
+
+</html>
