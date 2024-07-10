@@ -26,12 +26,6 @@
         <!-- responsive style -->
         <link href="css/responsive.css" rel="stylesheet" />
       </head>
-      <style>
-    .white-icon {
-        filter: invert(1);
-    }
-</style>
-
 
       <body> <!-- partial:index.partial.html --> 
 
@@ -41,18 +35,17 @@
       
           <div class="content"> 
             
-          <img src="/assets/img/user-icon.png" alt="user" class="white-icon" width="80px" height="80px">
-            Nome da Conta
+           <h2><img src="images/user_icon.png" alt="user" ></h2> 
+           
            <h2>Informaçoes da conta </h2>
            <form action="login_action.php" method="post">
            <div class="form"> 
 
             
             <div class="textbox">
-               Número de identificação  
-            
-             </div>
-
+            <p></p>
+             </div> 
+             dsa
             <div class="inputBox"> 
       
              <input type="password" name="password" required> <i>Password</i> 
