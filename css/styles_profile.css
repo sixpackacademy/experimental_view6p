@@ -65,7 +65,7 @@ section span:hover
 section .signin
 {
   position: absolute;
-  width: 400px;
+  width: 1000px;
   background: #222;  
   z-index: 1000;
   display: flex;
@@ -103,6 +103,20 @@ section .signin .content .form .inputBox
   position: relative;
   width: 100%;
 }
+section .signin .content .form .textbox{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+} 
+
+
 section .signin .content .form .inputBox input 
 {
   position: relative;
@@ -182,16 +196,3 @@ input[type="submit"]:active
   }
 }
 
-.profile
-{
-  position: absolute;
-  width: 1000px;
-  background: #222;  
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0,0,0,9);
-}
