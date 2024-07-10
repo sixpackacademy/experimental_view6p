@@ -271,37 +271,6 @@
                 </div>
         </main>
 
-        <main id="stock-section" class="hidden">     
-        <div class="stocks">
-            <div class="stockpile">
-                <div class="header">
-                    <h2>Stock Overview</h2>
-                    <button class="see-all">See all →</button>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Car Brand</th>
-                            <th>Model</th>
-                            <th>Year</th>
-                            <th>Price per Unit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each carros}}
-                        <tr>
-                            <td>{{this.marca}}</td>
-                            <td>{{this.modelo}}</td>
-                            <td>{{this.ano}}</td>
-                            <td>{{this.preco}},000€</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </main>
-
         <main id="accounts-section" class="hidden">
             <div class="accounts">
                 <div class="account-overview">
