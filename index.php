@@ -71,6 +71,12 @@ if (isset($_SESSION['user_id'])) {
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="profile.php"> Profile</a>
+                </li>
+               
+                
+                
               </ul>
             </div>
           </div>
