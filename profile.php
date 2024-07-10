@@ -26,6 +26,11 @@
         <!-- responsive style -->
         <link href="css/responsive.css" rel="stylesheet" />
       </head>
+      <style>
+    .white-icon {
+        filter: invert(1);
+    }
+</style>
 
       <body> <!-- partial:index.partial.html --> 
 
@@ -35,7 +40,7 @@
       
           <div class="content"> 
             
-           <h2><img src="images/user_icon.png" alt="user" ></h2> 
+           <h2><img src="/assets/img/user-icon.png" class="white-icon" alt="user" width="80" height="80" ></h2> 
            
            <h2>Informaçoes da conta </h2>
            <form action="login_action.php" method="post">
