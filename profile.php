@@ -39,32 +39,20 @@
          <div class="signin"> 
       
           <div class="content"> 
-            
+            <h2>Informaçoes da conta </h2>
            <h2><img src="/assets/img/user-icon.png" class="white-icon" alt="user" width="80" height="80" ></h2> 
            
-           <h2>Informaçoes da conta </h2>
-           <form action="login_action.php" method="post">
-           <div class="form"> 
+           
+           <div class="form">
+             <p>Nome</p>
+            <div class="textbox"> 
+              Ricardo Magalhães
+             </div>
 
-            
-            <div class="textbox">
-            <p></p>
-             </div> 
-             dsa
-            <div class="inputBox"> 
-      
-             <input type="password" name="password" required> <i>Password</i> 
-      
-            </div> 
-      
-          
-      
-            
-      
            </div> 
       
           </div> 
-        </form>
+       
       
          </div> 
       
