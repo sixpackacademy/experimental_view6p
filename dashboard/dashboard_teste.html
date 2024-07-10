@@ -16,8 +16,8 @@
             <span class="close">&times;</span>
             <h2>Responder ao Cliente</h2>
             <form id="responseForm">
-                <label for="clientName">Cliente:</label>
-                <input type="text" id="clientName" name="clientName" readonly>
+                <label for="clientEmail">Cliente:</label>
+                <input type="text" id="clientEmail" name="clientEmail" readonly>
                 <label for="responseMessage">Mensagem:</label>
                 <textarea id="responseMessage" name="responseMessage" rows="4" required></textarea>
                 <button type="submit">Enviar</button>
@@ -110,8 +110,8 @@
             <span class="close">&times;</span>
             <h2>Responder ao Cliente</h2>
             <form id="responseForm">
-                <label for="clientName">Cliente:</label>
-                <input type="text" id="clientName" name="clientName" readonly>
+                <label for="clientEmail">Cliente:</label>
+                <input type="text" id="clientEmail" name="clientEmail" readonly>
                 <label for="responseMessage">Mensagem:</label>
                 <textarea id="responseMessage" name="responseMessage" rows="4" required></textarea>
                 <button type="submit" class="submit-btn">Enviar</button>
@@ -191,7 +191,7 @@
     const modal = document.getElementById('responseModal');
     const closeModal = document.querySelector('.close');
     const responseButtons = document.querySelectorAll('.approve-btn');
-    const clientNameInput = document.getElementById('clientName');
+    const clientEmailInput = document.getElementById('clientEmail');
     const responseForm = document.getElementById('responseForm');
 
     sidebarLinks.forEach(link => {
@@ -211,8 +211,8 @@
     responseButtons.forEach(button => {
         button.addEventListener('click', function (event) {
             const clientRow = this.closest('tr');
-            const clientName = clientRow.querySelector('td:nth-child(1)').textContent;
-            clientNameInput.value = clientName;
+            const clientEmail = clientRow.querySelector('td:nth-child(2)').textContent;
+            clientEmailInput.value = clientEmail;
             modal.style.display = 'block';
         });
     });
@@ -230,7 +230,7 @@
     responseForm.addEventListener('submit', function (event) {
         event.preventDefault();
         // Lógica para enviar a resposta
-        alert('Resposta enviada para ' + clientNameInput.value);
+        alert('Resposta enviada para ' + clientEmailInput.value);
         modal.style.display = 'none';
     });
 
