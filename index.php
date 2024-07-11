@@ -53,27 +53,35 @@ if (isset($_SESSION['user_id'])) {
             <div class="ml-auto">
               <ul class="navbar-nav  ">
   
-                <li class="nav-item">
+                
                 <?php
                   if(!isset($_SESSION['user_id'])) {
+                    echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="login.php">Log In</a>';
+                    echo '</li>';
                   } else {
+                    echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    if($_SESSION['role'] == 1){
+                      echo '<a class="nav-link" href="/dashboard">Dashboard</a>';
+                    }
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="profile.php"> Profile</a>';
+                    echo '</li>';
                   }
                   ?>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/dashboard">Dashboard</a>
-                </li>
+                
                 <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="profile.php"> Profile</a>
-                </li>
+               
                
                 
                 

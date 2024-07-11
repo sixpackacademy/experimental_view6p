@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+  $role = $_SESSION['role'];
+}
+?>
+<?php if($role == 1) { ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -414,3 +422,9 @@
 </body>
 
 </html>
+<?php } ?>
+
+<?php if($role == 0){ ?>
+    <h1>NAO TENS PERMISSAO!</h1>
+     <img src="/assets/img/permissao.jpeg">
+<?php } ?>
