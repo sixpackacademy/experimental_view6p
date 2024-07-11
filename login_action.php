@@ -18,6 +18,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['identification_number'] = $user['identification_number'];
             $_SESSION['role'] = $user['role'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['phone_number'] = $user['phone_number'];
             header('Location: index.php');
         } else {
             echo "Pass errada";
