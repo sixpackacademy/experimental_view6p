@@ -17,6 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($user['password'] === $password){
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['identification_number'] = $user['identification_number'];
+            $_SESSION['first_name'] = $user['first_name'];
+            $_SESSION['last_name'] = $user['last_name'];
             $_SESSION['role'] = $user['role'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
