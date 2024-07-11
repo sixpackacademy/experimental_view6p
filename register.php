@@ -44,27 +44,27 @@
             <div class="form"> 
         
                 <div class="inputBox"> 
-                <input type="text" required> <i>Username</i> 
+                <input type="text" name="username" required> <i>Username</i> 
                 </div> 
 
                 <div class="inputBox"> 
-                    <input type="text" required> <i>First Name</i> 
+                    <input type="text" name="first_name" required> <i>First Name</i> 
                 </div> 
 
                 <div class="inputBox"> 
-                    <input type="text" required> <i>Last Name</i> 
+                    <input type="text" name="last_name" required> <i>Last Name</i> 
                 </div> 
                 
                 <div class="inputBox"> 
-                    <input type="email" required> <i>Email</i> 
+                    <input type="email" name="email" required> <i>Email</i> 
                 </div> 
         
                 <div class="inputBox"> 
-                <input type="password" required> <i>Password</i> 
+                <input type="password" name="password" required> <i>Password</i> 
                 </div> 
 
                 <div class="inputBox"> 
-                    <input type="text" required> <i>Phone Number</i> 
+                    <input type="text" name="phone_number" required> <i>Phone Number</i> 
                 </div> 
         
                 <div class="links">
