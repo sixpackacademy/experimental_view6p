@@ -40,7 +40,7 @@
            <h2><img src="images/logo_6pack.png" alt="Logo" class="logo"></h2> 
             
            <h2>Register</h2>
-           <form action="#" method="post">
+           <form action="register_action.php" method="post">
             <div class="form"> 
         
                 <div class="inputBox"> 
