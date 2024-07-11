@@ -64,7 +64,9 @@ if (isset($_SESSION['user_id'])) {
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
                     echo '</li>';
                     echo '<li class="nav-item">';
-                    echo '<a class="nav-link" href="/dashboard">Dashboard</a>';
+                    if($_SESSION['role'] == 1){
+                      echo '<a class="nav-link" href="/dashboard">Dashboard</a>';
+                    }
                     echo '</li>';
                     echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="profile.php"> Profile</a>';
