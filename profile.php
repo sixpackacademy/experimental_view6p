@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+  $role = $_SESSION['role'];
+  $identification_number = $_SESSION['identification_number'];
+  $username = $_SESSION['username'];
+  $email = $_SESSION['email'];
+  $phone_number = $_SESSION['phone_number'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
