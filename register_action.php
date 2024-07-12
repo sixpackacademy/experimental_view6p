@@ -23,9 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     
-
-    $smtm->close();
-    
+    if($stmt !== null){
+        $smtm->close();
+    }   
 }
-
-$conn->close();
