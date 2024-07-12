@@ -9,9 +9,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $phone_number = $_POST['phone_number'];
+    $identification_number = rand(1000,2000);
+    $role = 0;
 
-    $stmt = $conn->prepare("INSERT INTO users (username, first_name, last_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, ?, ?, 0)");
-    $stmt->bind_param("ssssss", $username, $first_name, $last_name, $email, $phone_number, $password);
+    $stmt = $conn->prepare("INSERT INTO users (username, first_name, last_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $username, $first_name, $last_name, $email, $phone_number, $password, $role, $identification_number);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result){
