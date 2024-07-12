@@ -12,8 +12,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $identification_number = rand(1000,2000);
     $role = 0;
 
-    $stmt = $conn->prepare("INSERT INTO users (username, first_name, last_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $username, $first_name, $last_name, $email, $phone_number, $password, $role, $identification_number);
+    $stmt = $conn->prepare("INSERT INTO users (username, first_name, last_name, email, phone_number, password, role, identification_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $username, $first_name, $last_name, $email, $phone_number, $password, $role, $identification_number);
     $stmt->execute();
     $result = $stmt->get_result();
     if($result){
