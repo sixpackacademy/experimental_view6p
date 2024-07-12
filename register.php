@@ -58,14 +58,15 @@
                 <div class="inputBox"> 
                     <input type="email" name="email" required> <i>Email</i> 
                 </div> 
-        
-                <div class="inputBox"> 
-                <input type="password" name="password" required> <i>Password</i> 
-                </div> 
-
                 <div class="inputBox"> 
                     <input type="text" name="phone_number" required> <i>Phone Number</i> 
                 </div> 
+                <div class="inputBox"> 
+                <input type="password" name="password" required> <i>Password</i> 
+                </div>
+                 
+
+                
         
                 <div class="links">
                     
