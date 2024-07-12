@@ -54,7 +54,7 @@
             </div> 
       
             <div class="links"> 
-              <a href="register.html">I dont have an account</a> 
+              <a href="register.php">Ainda não tem conta?</a> 
             </div> 
       
             <div class="inputBox"> 
