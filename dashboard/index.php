@@ -109,7 +109,6 @@ $result2 = $conn->query($num_contacto);
                 <div class="recent-sales">
                     <div class="header">
                         <h2>Mensagens</h2>
-                        <button class="see-all">Ver Tudo →</button>
                     </div>
                     <table>
                         <thead>
@@ -119,16 +118,26 @@ $result2 = $conn->query($num_contacto);
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Drenagem Linfática</td>
-                                
-                                <td>António Costa</td>
-                            </tr>
-                            <tr>
-                                <td>Luís Montenegro</td>
-                                
-                                <td>Luís Montenegro</td>
-                            </tr>
+                        <?php
+                            require '../db/database_connection.php';
+
+                            $query = "SELECT cliente, email, mensagem FROM contactos";
+                            $result = $conn->query($query);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['cliente']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['mensagem']) . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
+                            }
+
+                            $conn->close();
+                            ?>
+                           
                         </tbody>
                     </table>
                 </div>
