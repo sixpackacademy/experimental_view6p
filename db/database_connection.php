@@ -11,5 +11,4 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-echo "Conectado!";
 # ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'RicardoMagalhaes2004';
