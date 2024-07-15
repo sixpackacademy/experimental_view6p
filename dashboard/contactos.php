@@ -40,16 +40,13 @@ if ($role == 1) {
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
+                    <a href="/dashboard" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
                 <li>
-                    <a href="#" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                    <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
                 </li>
                 <li>
-                    <a href="#" class="" id="reserve"><i class='bx bxs-calendar'></i><span>Marcações de serviços</span></a>
-                </li>
-                <li>
-                    <a href="#" class="active" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
+                    <a href="/dashboard/contactos.php" class="active" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
                 </li>
             </ul>
         </div>
@@ -126,20 +123,6 @@ if ($role == 1) {
             const responseButtons = document.querySelectorAll('.approve-btn');
             const clientEmailInput = document.getElementById('clientEmail');
             const responseForm = document.getElementById('responseForm');
-
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    sidebarLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
-                    mainContentSections.forEach(section => section.classList.add('hidden'));
-                    const targetId = this.getAttribute('id') + '-section';
-                    const targetSection = document.querySelector(`#${targetId}`);
-                    if (targetSection) {
-                        targetSection.classList.remove('hidden');
-                    }
-                });
-            });
 
             responseButtons.forEach(button => {
                 button.addEventListener('click', function (event) {

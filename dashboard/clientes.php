@@ -40,16 +40,14 @@ if ($role == 1) {
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="#" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
+                    <a href="/dashboard" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
                 <li>
-                    <a href="#" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                    <a href="/dashboard/clientes.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
                 </li>
+                
                 <li>
-                    <a href="#" class="" id="reserve"><i class='bx bxs-calendar'></i><span>Marcações de serviços</span></a>
-                </li>
-                <li>
-                    <a href="#" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
+                    <a href="/dashboard/contactos.php" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
                 </li>
             </ul>
         </div>
