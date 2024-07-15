@@ -261,7 +261,7 @@ if (isset($_SESSION['user_id'])) {
                 Contacte nos
               </h2>
             </div>
-            <form action="">
+            <form action="mandar_mensagem.php" method="post">
               <div>
                 <input type="text" placeholder="Nome" name="nome" required/>
               </div>
