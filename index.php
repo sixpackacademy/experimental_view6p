@@ -263,16 +263,16 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <form action="">
               <div>
-                <input type="text" placeholder="Nome" />
+                <input type="text" placeholder="Nome" name="nome" required/>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" name="email" required/>
               </div>
               <div>
-                <input type="text" placeholder="Número de telemóvel" />
+                <input type="text" placeholder="Número de telemóvel" name="num_telemovel" required/>
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Mensagem" />
+                <input type="text" class="message-box" placeholder="Mensagem" name="mensagem" required/>
               </div>
               <div class="d-flex ">
                 <button>
