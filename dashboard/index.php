@@ -147,29 +147,33 @@ $result2 = $conn->query($num_contacto);
                         <button class="see-all">Ver Tudo →</button>
                     </div>
                     <div class="customer-list">
-                        <div class="customer-item">
-                            <img src="/assets/img/tanjil.jpg" alt="Customer">
-                            <div class="customer-info">
-                                <p>Tanjil Khan</p>
-                                <span>Contacts</span>
-                                <div class="customer-info-icons">
-                                    <i class='bx bx-user'></i>
-                                    <i class='bx bx-phone'></i>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                            require '../db/database_connection.php';
 
-                        <div class="customer-item">
-                            <img src="/assets/img/ricardo.png" alt="Customer">
-                            <div class="customer-info">
-                                <p>Ricardo Magalhães</p>
-                                <span>Contacts</span>
-                                <div class="customer-info-icons">
-                                    <i class='bx bx-user'></i>
-                                    <i class='bx bx-phone'></i>
-                                </div>
-                            </div>
-                        </div>
+                            $query = "SELECT id, first_name, last_name, identification_number, username, email, phone_number FROM users";
+                            $result = $conn->query($query);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<div class='customer-item'>";
+                                    echo "<img src='/assets/img/tanjil.jpg' alt='Customer'>";
+                                    echo "<div class='customer-info'>";
+                                    echo "<p>" . $row['username'] . "</p>";
+                                    echo "<span>Contacts</span>";
+                                    echo "<div class='customer-info-icons'>";
+                                    echo "<i class='bx bx-user'></i>";
+                                    echo "<i class='bx bx-phone'></i>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            }
+                             else {
+                                echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
+                            }
+
+                            $conn->close();
+                            ?>
                        
                     </div>
                 </div>
