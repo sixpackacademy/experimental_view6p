@@ -79,6 +79,7 @@ if ($role == 1) {
                     <table>
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Cliente</th>
                                 <th>Identificacão</th>
                                 <th>Email</th>
@@ -90,12 +91,13 @@ if ($role == 1) {
                             <?php
                             require '../db/database_connection.php';
 
-                            $query = "SELECT identification_number, username, email, phone_number FROM users";
+                            $query = "SELECT id, identification_number, username, email, phone_number FROM users";
                             $result = $conn->query($query);
 
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>"; // Alterado para exibir o ID do cliente
                                     echo "<td>" . htmlspecialchars($row['username']) . "</td>";
                                     echo "<td>" . htmlspecialchars($row['identification_number']) . "</td>";
                                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
@@ -106,7 +108,8 @@ if ($role == 1) {
                                     </td>';
                                     echo "</tr>";
                                 }
-                            } else {
+                            }
+                             else {
                                 echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
                             }
 
@@ -123,6 +126,20 @@ if ($role == 1) {
     </div>
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const editButtons = document.querySelectorAll('.approve-btn');
+    
+    editButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const clientRow = this.closest('tr');
+            const clientId = clientRow.querySelector('td:first-child').textContent;
+            window.location.href = `editar_cliente.php?id=${clientId}`;
+        });
+    });
+});
+
+</script>
 
 </html>
 <?php 
