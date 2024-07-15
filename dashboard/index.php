@@ -52,11 +52,11 @@ $result2 = $conn->query($num_contacto);
                     <a href="#" class="active" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
             <li>
-                <a href="#" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
             </li>
            
             <li>
-                <a href="#" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
+                <a href="/dashboard/contactos.php" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
             </li>
 
             </li> 
@@ -339,85 +339,7 @@ $result2 = $conn->query($num_contacto);
         </main>
 
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
-        const mainContentSections = document.querySelectorAll('.main-content > main');
-        const modal = document.getElementById('responseModal');
-        const closeModal = document.querySelector('.close');
-        const responseButtons = document.querySelectorAll('.approve-btn');
-        const clientEmailInput = document.getElementById('clientEmail');
-        const responseForm = document.getElementById('responseForm');
-    
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                sidebarLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-                mainContentSections.forEach(section => section.classList.add('hidden'));
-                const targetId = this.getAttribute('id') + '-section';
-                const targetSection = document.querySelector(`#${targetId}`);
-                if (targetSection) {
-                    targetSection.classList.remove('hidden');
-                }
-            });
-        });
-    
-        responseButtons.forEach(button => {
-            button.addEventListener('click', function (event) {
-                const clientRow = this.closest('tr');
-                const clientEmail = clientRow.querySelector('td:nth-child(2)').textContent;
-                clientEmailInput.value = clientEmail;
-                modal.style.display = 'block';
-            });
-        });
-    
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-    
-        window.addEventListener('click', function (event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-    
-        responseForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Lógica para enviar a resposta
-            // alert('Resposta enviada para ' + clientEmailInput.value);
-            modal.style.display = 'none';
-        });
-    
-        //document.querySelector('#reviews').classList.add('active');
-        document.querySelector('#reviews-section').classList.remove('hidden');
-    });
-    // Dentro do evento 'submit' do formulário de resposta
-    responseForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        // Obter os valores necessários para a resposta
-        const clientEmail = document.getElementById('clientEmail').value;
-        const responseMessage = document.getElementById('responseMessage').value;
-        
-        // Aqui você pode adicionar a lógica para enviar a resposta para o cliente
-        
-        // Exemplo de alerta para demonstrar o envio (pode ser removido)
-        // alert('Resposta enviada para ' + clientEmail);
-        
-        // Construir a URL do Gmail com os parâmetros preenchidos
-        const emailSubject = encodeURIComponent('Resposta à sua mensagem');
-        const emailBody = encodeURIComponent(responseMessage);
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${clientEmail}&su=${emailSubject}&body=${emailBody}`;
-        
-        // Abrir o Gmail em uma nova janela/tab
-        window.open(gmailUrl, '_blank');
-        
-        // Fechar o modal após o envio
-        modal.style.display = 'none';
-    });
-    
-    </script>
+   
 </body>
 
 </html>
