@@ -3,6 +3,16 @@ session_start();
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
   $role = $_SESSION['role'];
+  require '../db/database_connection.php';
+  $query = "SELECT id, identification_number, username, email, phone_number FROM users";
+  $num_contacto = "SELECT * from contactos";
+$result = $conn->query($query);
+$result2 = $conn->query($num_contacto);
+    // Conta o número de registos
+    $num_users = $result->num_rows;
+    $quant_contactos = $result2->num_rows;
+
+    $conn->close();
 }
 ?>
 <?php if($role == 1) { ?>
@@ -42,13 +52,11 @@ if (isset($_SESSION['user_id'])) {
                     <a href="#" class="active" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
             <li>
-                <a href="#" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
             </li>
+           
             <li>
-                <a href="#" class="" id="reserve"><i class='bx bxs-calendar'></i></i><span>Marcações de serviços</span></a>
-            </li>
-            <li>
-                <a href="#" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
+                <a href="/dashboard/contactos.php" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
             </li>
 
             </li> 
@@ -76,7 +84,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>43</h1>
+                        <h1><?php echo $num_users; ?></h1>
                         <span>Clientes</span>
                     </div>
                     <div>
@@ -86,7 +94,7 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="card-single">
                     <div>
-                        <h1>3</h1>
+                        <h1><?php echo $quant_contactos; ?></h1>
                         <span>Contactos</span>
                     </div>
                     <div>
@@ -94,42 +102,42 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div>
 
-                <div class="card-single">
-                    <div>
-                        <h1>2</h1>
-                        <span>Marcações de Serviços em Pendente</span>
-                    </div>
-                    <div>
-                        <i class='bx bx-store bx-lg'></i>
-                    </div>
-                </div>
+               
             </div>
 
             <div class="dashboard">
                 <div class="recent-sales">
                     <div class="header">
-                        <h2>Serviços Feitos Recentes</h2>
-                        <button class="see-all">Ver Tudo →</button>
+                        <h2>Mensagens</h2>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <th>Serviço</th>
-                                <th>Data</th>
-                                <th>Cliente</th>    
+                                <th>Cliente</th>
+                                <th>Mensagem</th>    
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Drenagem Linfática</td>
-                                <td>05-08-2024</td>
-                                <td>António Costa</td>
-                            </tr>
-                            <tr>
-                                <td>Luís Montenegro</td>
-                                <td>01-06-2024</td>
-                                <td>Luís Montenegro</td>
-                            </tr>
+                        <?php
+                            require '../db/database_connection.php';
+
+                            $query = "SELECT cliente, email, mensagem FROM contactos";
+                            $result = $conn->query($query);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['cliente']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['mensagem']) . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
+                            }
+
+                            $conn->close();
+                            ?>
+                           
                         </tbody>
                     </table>
                 </div>
@@ -139,29 +147,33 @@ if (isset($_SESSION['user_id'])) {
                         <button class="see-all">Ver Tudo →</button>
                     </div>
                     <div class="customer-list">
-                        <div class="customer-item">
-                            <img src="/assets/img/tanjil.jpg" alt="Customer">
-                            <div class="customer-info">
-                                <p>Tanjil Khan</p>
-                                <span>Contacts</span>
-                                <div class="customer-info-icons">
-                                    <i class='bx bx-user'></i>
-                                    <i class='bx bx-phone'></i>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                            require '../db/database_connection.php';
 
-                        <div class="customer-item">
-                            <img src="/assets/img/ricardo.png" alt="Customer">
-                            <div class="customer-info">
-                                <p>Ricardo Magalhães</p>
-                                <span>Contacts</span>
-                                <div class="customer-info-icons">
-                                    <i class='bx bx-user'></i>
-                                    <i class='bx bx-phone'></i>
-                                </div>
-                            </div>
-                        </div>
+                            $query = "SELECT id, first_name, last_name, identification_number, username, email, phone_number FROM users";
+                            $result = $conn->query($query);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<div class='customer-item'>";
+                                    echo "<img src='/assets/img/tanjil.jpg' alt='Customer'>";
+                                    echo "<div class='customer-info'>";
+                                    echo "<p>" . $row['username'] . "</p>";
+                                    echo "<span>Contacts</span>";
+                                    echo "<div class='customer-info-icons'>";
+                                    echo "<i class='bx bx-user'></i>";
+                                    echo "<i class='bx bx-phone'></i>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            }
+                             else {
+                                echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
+                            }
+
+                            $conn->close();
+                            ?>
                        
                     </div>
                 </div>
@@ -340,85 +352,7 @@ if (isset($_SESSION['user_id'])) {
         </main>
 
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
-        const mainContentSections = document.querySelectorAll('.main-content > main');
-        const modal = document.getElementById('responseModal');
-        const closeModal = document.querySelector('.close');
-        const responseButtons = document.querySelectorAll('.approve-btn');
-        const clientEmailInput = document.getElementById('clientEmail');
-        const responseForm = document.getElementById('responseForm');
-    
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                sidebarLinks.forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-                mainContentSections.forEach(section => section.classList.add('hidden'));
-                const targetId = this.getAttribute('id') + '-section';
-                const targetSection = document.querySelector(`#${targetId}`);
-                if (targetSection) {
-                    targetSection.classList.remove('hidden');
-                }
-            });
-        });
-    
-        responseButtons.forEach(button => {
-            button.addEventListener('click', function (event) {
-                const clientRow = this.closest('tr');
-                const clientEmail = clientRow.querySelector('td:nth-child(2)').textContent;
-                clientEmailInput.value = clientEmail;
-                modal.style.display = 'block';
-            });
-        });
-    
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-    
-        window.addEventListener('click', function (event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-    
-        responseForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Lógica para enviar a resposta
-            // alert('Resposta enviada para ' + clientEmailInput.value);
-            modal.style.display = 'none';
-        });
-    
-        //document.querySelector('#reviews').classList.add('active');
-        document.querySelector('#reviews-section').classList.remove('hidden');
-    });
-    // Dentro do evento 'submit' do formulário de resposta
-    responseForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        // Obter os valores necessários para a resposta
-        const clientEmail = document.getElementById('clientEmail').value;
-        const responseMessage = document.getElementById('responseMessage').value;
-        
-        // Aqui você pode adicionar a lógica para enviar a resposta para o cliente
-        
-        // Exemplo de alerta para demonstrar o envio (pode ser removido)
-        // alert('Resposta enviada para ' + clientEmail);
-        
-        // Construir a URL do Gmail com os parâmetros preenchidos
-        const emailSubject = encodeURIComponent('Resposta à sua mensagem');
-        const emailBody = encodeURIComponent(responseMessage);
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${clientEmail}&su=${emailSubject}&body=${emailBody}`;
-        
-        // Abrir o Gmail em uma nova janela/tab
-        window.open(gmailUrl, '_blank');
-        
-        // Fechar o modal após o envio
-        modal.style.display = 'none';
-    });
-    
-    </script>
+   
 </body>
 
 </html>
