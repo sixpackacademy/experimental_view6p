@@ -18,6 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             // Executar a declaração
             if ($stmt->execute()) {
+                // Atualizar os dados na sessão
+                $_SESSION['email'] = $email;
+                $_SESSION['phone_number'] = $num_tel;
+
+                // Redirecionar para a página de perfil
                 header('Location: profile.php');
                 exit();
             } else {
