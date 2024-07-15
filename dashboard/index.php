@@ -3,6 +3,16 @@ session_start();
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
   $role = $_SESSION['role'];
+  require '../db/database_connection.php';
+  $query = "SELECT id, identification_number, username, email, phone_number FROM users";
+  $num_contacto = "SELECT * from contactos";
+$result = $conn->query($query);
+$result2 = $conn->query($num_contacto);
+    // Conta o número de registos
+    $num_users = $result->num_rows;
+    $quant_contactos = $result2->num_rows;
+
+    $conn->close();
 }
 ?>
 <?php if($role == 1) { ?>
@@ -44,9 +54,7 @@ if (isset($_SESSION['user_id'])) {
             <li>
                 <a href="#" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
             </li>
-            <li>
-                <a href="#" class="" id="reserve"><i class='bx bxs-calendar'></i></i><span>Marcações de serviços</span></a>
-            </li>
+           
             <li>
                 <a href="#" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
             </li>
@@ -76,7 +84,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>43</h1>
+                        <h1><?php echo $num_users; ?></h1>
                         <span>Clientes</span>
                     </div>
                     <div>
@@ -86,7 +94,7 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="card-single">
                     <div>
-                        <h1>3</h1>
+                        <h1><?php echo $quant_contactos; ?></h1>
                         <span>Contactos</span>
                     </div>
                     <div>
@@ -94,40 +102,31 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div>
 
-                <div class="card-single">
-                    <div>
-                        <h1>2</h1>
-                        <span>Marcações de Serviços em Pendente</span>
-                    </div>
-                    <div>
-                        <i class='bx bx-store bx-lg'></i>
-                    </div>
-                </div>
+               
             </div>
 
             <div class="dashboard">
                 <div class="recent-sales">
                     <div class="header">
-                        <h2>Serviços Feitos Recentes</h2>
+                        <h2>Mensagens</h2>
                         <button class="see-all">Ver Tudo →</button>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <th>Serviço</th>
-                                <th>Data</th>
-                                <th>Cliente</th>    
+                                <th>Cliente</th>
+                                <th>Mensagem</th>    
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Drenagem Linfática</td>
-                                <td>05-08-2024</td>
+                                
                                 <td>António Costa</td>
                             </tr>
                             <tr>
                                 <td>Luís Montenegro</td>
-                                <td>01-06-2024</td>
+                                
                                 <td>Luís Montenegro</td>
                             </tr>
                         </tbody>
