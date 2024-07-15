@@ -103,9 +103,10 @@ if ($role == 1) {
                                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                                     echo "<td>" . htmlspecialchars($row['phone_number']) . "</td>";
                                     echo '<td>
-                                    <button class="approve-btn" data-client="' . htmlspecialchars($row['username']) . '" >Editar</button>
-                                    <button class="reject-btn" data-client="' . htmlspecialchars($row['username']) . '" >Apagar</button>
-                                        </td>';
+                                    <button class="approve-btn" data-client="' . htmlspecialchars($row['username']) . '">Editar</button>
+                                    <button class="reject-btn" data-client-id="' . htmlspecialchars($row['id']) . '">Apagar</button>
+                                </td>';
+                                
                                     echo "</tr>";
                                 }
                             }
@@ -130,7 +131,7 @@ if ($role == 1) {
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const editButtons = document.querySelectorAll('.approve-btn');
-        const deleteButtons = document.querySelectorAll('.delete-btn');
+        const deleteButtons = document.querySelectorAll('.reject-btn');
 
         editButtons.forEach(button => {
             button.addEventListener('click', function (event) {
@@ -139,6 +140,18 @@ if ($role == 1) {
                 window.location.href = `editar_cliente.php?id=${clientId}`;
             });
         });
+
+        deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const clientRow = this.closest('tr');
+            const clientId = this.getAttribute('data-client-id');
+            // Aqui você pode implementar a lógica para deletar o cliente, como um redirecionamento para uma página de confirmação de exclusão
+            // Exemplo:
+            if (confirm(`Tem certeza que deseja apagar o cliente com ID ${clientId}?`)) {
+                window.location.href = `delete_cliente.php?id=${clientId}`;
+            }
+        });
+    });
     });
 </script>
 
