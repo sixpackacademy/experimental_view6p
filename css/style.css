@@ -104,7 +104,13 @@ body {
   position: relative;
   text-transform: uppercase;
   font-size: 15px;
+  transition: transform 0.2s ease;  /* Add transition for smooth effect */
 }
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link:hover {
+  transform: scale(1.5);  /* Scale the text on hover */
+}
+
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link::after {
   display: none;
@@ -118,10 +124,6 @@ body {
   background-color: #ffffff;
 }
 
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active a::after, .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item:hover a::after {
-  display: block;
-  background-color: #3EAF3C;
-}
 
 a,
 a:hover,
@@ -226,7 +228,6 @@ a:focus {
 .slider_section .box {
   margin: 125px 0;
 }
-
 .slider_section .detail-box {
   text-align: center;
 }
@@ -252,24 +253,34 @@ a:focus {
   margin-top: 25px;
 }
 
-.slider_section .detail-box a {
-  display: inline-block;
-  padding: 8px 35px;
-  background-color: transparent;
-  border: 1.5px solid #ffffff;
-  color: #ffffff;
-  border-radius: 0px;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  text-transform: uppercase;
+.slider_section .detail-box .button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  justify-items: center;
   margin-top: 35px;
 }
 
+.slider_section .detail-box a {
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  background-color: transparent;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .slider_section .detail-box a:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #7eee7488;
+  color: #ffffff;
+  transform: scale(1.1); /* Increase size to 110% on hover */
 }
 
 .slider_section #carouselExampleIndicators .carousel-indicators {
@@ -620,5 +631,47 @@ body.login-page {
   margin-bottom: 20px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font: bold 1.5rem sans-serif;
+  text-transform: uppercase;
+  color: grey;
+}
+ul li {
+  padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+ul li:hover {
+  color: #fff;
+}
+ul li:before {
+  content: "";
+  position: absolute;
+  inset: calc(100% - 5px) 0 0 0; /* 3px = the thickness */
+  background: #1b8606; /* the color */
+  scale: 0 1;
+  transition: .3s, translate 0s .3s;
+}
+ul:hover li:before {
+  scale: 1;
+}
+ul li:hover:before {
+  translate: 0;
+  transition: .3s;
+}
+ul:hover li:has(~ li:hover):before {
+  translate: 100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
+ul:hover li:hover ~ li:before {
+  translate: -100% 0;
+  transition: .2s .2s,scale 0s .4s;
+}
 
 /*# sourceMappingURL=style.css.map */

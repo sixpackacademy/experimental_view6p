@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
     <header class="header_section">
       <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               Six Pack Academy
             </span>
@@ -53,24 +53,38 @@ if (isset($_SESSION['user_id'])) {
             <div class="ml-auto">
               <ul class="navbar-nav  ">
   
-                <li class="nav-item">
+                
                 <?php
                   if(!isset($_SESSION['user_id'])) {
-                    echo '<a class="nav-link" href="login.html">Log In</a>';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="login.php">Log In</a>';
+                    echo '</li>';
                   } else {
+                    echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    if($_SESSION['role'] == 1){
+                      echo '<a class="nav-link" href="/dashboard">Dashboard</a>';
+                    }
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="profile.php"> Profile</a>';
+                    echo '</li>';
                   }
                   ?>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="marcar_servicos.php">Marcar Serviço</a>
-                </li>
+                
                 <li class="nav-item">
                   <a class="nav-link" href="#servicos">Servicos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
+               
+               
+                
+                
               </ul>
             </div>
           </div>
@@ -96,19 +110,19 @@ if (isset($_SESSION['user_id'])) {
                     <h1>
                       Six Pack Academy
                     </h1>
-                    <p>
+                    <p> 
                       O Ginásio Six Pack é um centro de fitness dedicado a oferecer uma variedade de serviços de alta qualidade para satisfazer as suas necessidades de saúde e condicionamento físico. 
                       Entre os serviços disponíveis, destacamos a
-                      
-                      <br> Fisioterapia desportiva
-                      <br> Fisioterapia
-                      <br> Reabilitação desportiva
-                      <br> Avaliação postural
-                      <br> Massagem de relaxamento
-                      <br> Massagem descontrotaturante
-                      <br> Drenagem linfática
-                      <br> Knesio taping
-                  
+                      <div class="button-container">
+                      <a href="fisio_desp.php">Fisioterapia Desportiva</a>
+                      <a href="fisio.php">Fisioterapia</a>
+                      <a href="reabi_desp.php">Reabilitação desportiva</a>
+                      <a href="aval_post.php">Avaliação postural</a>
+                      <a href="massagem_relax.php">Massagem de relaxamento</a>
+                      <a href="massagem_descont.php">Massagem descontrotaturante</a>
+                      <a href="drenagem_linfatica.php">Drenagem linfática</a>
+                      <a href="knesio_taping.php">Knesio taping</a>
+                      <div>
                     </p>
                   </div>
                 </div>
@@ -247,18 +261,18 @@ if (isset($_SESSION['user_id'])) {
                 Contacte nos
               </h2>
             </div>
-            <form action="">
+            <form action="mandar_mensagem.php" method="post">
               <div>
-                <input type="text" placeholder="Nome" />
+                <input type="text" placeholder="Nome" name="nome" required/>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" name="email" required/>
               </div>
               <div>
-                <input type="text" placeholder="Número de telemóvel" />
+                <input type="text" placeholder="Número de telemóvel" name="num_telemovel" required/>
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Mensagem" />
+                <input type="text" class="message-box" placeholder="Mensagem" name="mensagem" required/>
               </div>
               <div class="d-flex ">
                 <button>
@@ -278,7 +292,7 @@ if (isset($_SESSION['user_id'])) {
   <section class="info_section layout_padding2">
     <div class="container">
       <div class="info_items">
-        <a href="">
+        <a href="https://www.google.pt/maps/place/R.+de+Faria+Guimar%C3%A3es+753,+4200-077+Porto/@41.1667026,-8.6116752,54m/data=!3m1!1e3!4m6!3m5!1s0xd24645737f8f6bb:0xe04f403174ccf745!8m2!3d41.1638469!4d-8.6065284!16s%2Fg%2F11c2h3wzmj?entry=ttu">
           <div class="item ">
             <div class="img-box box-1">
               <img src="" alt="">
