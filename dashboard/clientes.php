@@ -105,7 +105,7 @@ if ($role == 1) {
                                     echo '<td>
                                     <button class="approve-btn" data-client="' . htmlspecialchars($row['username']) . '" >Editar</button>
                                     <button class="reject-btn" data-client="' . htmlspecialchars($row['username']) . '" >Apagar</button>
-                                    </td>';
+                                        </td>';
                                     echo "</tr>";
                                 }
                             }
@@ -126,19 +126,20 @@ if ($role == 1) {
     </div>
 
 </body>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const editButtons = document.querySelectorAll('.approve-btn');
-    
-    editButtons.forEach(button => {
-        button.addEventListener('click', function (event) {
-            const clientRow = this.closest('tr');
-            const clientId = clientRow.querySelector('td:first-child').textContent;
-            window.location.href = `editar_cliente.php?id=${clientId}`;
+        const editButtons = document.querySelectorAll('.approve-btn');
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+
+        editButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                const clientRow = this.closest('tr');
+                const clientId = clientRow.querySelector('td:first-child').textContent;
+                window.location.href = `editar_cliente.php?id=${clientId}`;
+            });
         });
     });
-});
-
 </script>
 
 </html>
