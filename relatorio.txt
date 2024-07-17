@@ -1,0 +1,28 @@
+Introdução
+O nosso projeto final da disciplina PWC (Programação Web-Cliente) baseia-se na criação do website do ginásio local chamado sixpackacademy. O ginásio não tem website, portanto decidimos realizar um website em que os utilizadores possam marcar o seguinte serviço:
+    * Fisioterapia desportiva
+    * Fisioterapia
+    * Reabilitação desportiva
+    * Avaliação postural
+    * Massagem de relaxamento
+    * Massagem descontrotaturante
+    * Drenagem linfática
+    * Knesio taping
+
+O administrador pode aceitar ou recusar as marcações, quando aceitar a marcação, o cliente irá receber uma notificação a dizer que foi marcado.
+
+Para trabalharmos em grupo, usamos um sistema de versão de controlo git. Com a ajuda do github desktop, conseguimos colaborar juntos e fazer o projeto em simultâneo.
+O nosso website vai ser feito com HTML, CSS e JavaScript. Também usamos a framework Bootstrap
+
+Buscamos o logo do ginásio do sixpackacademy
+
+Meti o fundo transparente para o logo
+https://www.remove.bg/upload
+
+https://www.free-css.com/free-css-templates/page296/neogym
+#3EAF3C
+
+
+eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzE5NjA2NTcxLCJqdGkiOiIxMWQ2YjMyZi1kNGFjLTQ1YjUtOTgyZC0xNWFjNTM1NDkzMjAiLCJ1c2VyX3V1aWQiOiJiMGIzY2FlYi1jZTVkLTQxMGUtYWM1Zi1kN2Y2ZjY4YzdiM2MifQ.dAsARiPZvNz4BdrCfFQOkZ6-SqE2YO9ziF1hZN95MAqX_EHgiOfMZ1K3A_hF_3c20hoQ_M94TPMub_9LxcYDKA
+$client->setClientId('167388635862-87tucghlc8n09eifdnoh2h4m35aeqpc2.apps.googleusercontent.com'); // Substitua pelo seu Client ID
+$client->setClientSecret('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'); // Substitua pelo seu Client Secret
