@@ -1,15 +1,20 @@
 <?php
 session_start();
 require 'db/database_connection.php';
-require 'vendor/autoload.php'; // Carrega o PHPMailer e o Dotenv
+require_once realpath(__DIR__ . '/vendor/autoload.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
 
+
 // Carrega as variáveis de ambiente do ficheiro .env
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+
+$smtp_username = $_ENV['SMTP_USERNAME'];
+$smtp_password = $_ENV['SMTP_PASSWORD'];
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -32,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = getenv('SMTP_USERNAME');
-            $mail->Password = getenv('SMTP_PASSWORD');
+            $mail->Username = $smtp_username;
+            $mail->Password = $smtp_password;
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
