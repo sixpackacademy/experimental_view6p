@@ -70,7 +70,7 @@
         
                 <div class="links">
                     
-                        <a href="login.html">I already have an account</a> 
+                        <a href="login.php">I already have an account</a> 
                     
                 </div> 
         
