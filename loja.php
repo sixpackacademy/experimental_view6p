@@ -144,6 +144,12 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
+.center-cropped {
+  width: 300px;
+  height: 300px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 	</style>
   <meta charset="UTF-8">
   <title>Loja suplementos</title>
@@ -168,7 +174,7 @@ a:hover {
 							<?php
                             require 'db/database_connection.php';
 
-                            $query = "SELECT id, nome, preco FROM produtos";
+                            $query = "SELECT id, nome, preco, imagem FROM produtos";
                             $result = $conn->query($query);
 
                             if ($result->num_rows > 0) {
@@ -179,7 +185,7 @@ a:hover {
                                    	echo "<div class='col-md-6 col-lg-4 col-xl-3'>";
 									echo "		<div id='product-' class='single-product'>";
 									echo "<div class='part-1'>";
-									echo "<img src='/images/logo_6pack.png'>";
+									echo "<img src='/images/" . $row['imagem'] . " ' class='center-cropped'>";
 									echo "</div>";
 									echo "<div class='part-2'>";
 									echo "<h3 class='product-title'>" . $row['nome'] . "</h3>";
