@@ -81,9 +81,6 @@ if (isset($_SESSION['user_id'])) {
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="loja.php">Loja</a>
-                </li>
                
                
                 
@@ -245,8 +242,6 @@ if (isset($_SESSION['user_id'])) {
   </section>
 
   <!-- end heathy section -->
-
-
 
   
   <!-- contact section -->
