@@ -62,26 +62,7 @@ a:hover {
 		transform: scale(1.2,1.2) rotate(5deg);
 }
 
-.section-products #product-1 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
-    background-size: cover;
-		transition: all 0.3s;
-}
 
-.section-products #product-2 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
-    background-size: cover;
-}
-
-.section-products #product-3 .part-1::before {
-    background: url("https://i.ibb.co/L8Nrb7p/1.jpg") no-repeat center;
-    background-size: cover;
-}
-
-.section-products #product-4 .part-1::before {
-    background: url("https://i.ibb.co/cLnZjnS/2.jpg") no-repeat center;
-    background-size: cover;
-}
 
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
@@ -165,7 +146,7 @@ a:hover {
 }
 	</style>
   <meta charset="UTF-8">
-  <title>CodePen - Popular Products Section Using HTML , CSS , Bootstrap</title>
+  <title>Loja suplementos</title>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'><link rel="stylesheet" href="./style.css">
 
@@ -177,156 +158,45 @@ a:hover {
 				<div class="row justify-content-center text-center">
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
-										<h3>Featured Product</h3>
-										<h2>Popular Products</h2>
+										<h3>Loja Suplementos</h3>
+										<h2>Os nossos produtos</h2>
 								</div>
 						</div>
 				</div>
 				<div class="row">
 						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-1" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-2" class="single-product">
-										<div class="part-1">
-												<span class="discount">15% off</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-3" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-4" class="single-product">
-										<div class="part-1">
-												<span class="new">new</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-1" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-2" class="single-product">
-										<div class="part-1">
-												<span class="discount">15% off</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-3" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-4" class="single-product">
-										<div class="part-1">
-												<span class="new">new</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
+							<?php
+                            require 'db/database_connection.php';
+
+                            $query = "SELECT id, nome, preco FROM produtos";
+                            $result = $conn->query($query);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                   
+                                
+                                    echo "</tr>";
+                                   	echo "<div class='col-md-6 col-lg-4 col-xl-3'>";
+									echo "		<div id='product-' class='single-product'>";
+									echo "<div class='part-1'>";
+									echo "<img src='/images/logo_6pack.png'>";
+									echo "</div>";
+									echo "<div class='part-2'>";
+									echo "<h3 class='product-title'>" . $row['nome'] . "</h3>";
+									echo "<h4 class='product-price'>" . $row['preco'] . ".99 €</h4>";
+									echo "</div>";
+									echo "</div>";
+									echo "</div>";
+                                }
+                            }
+                             else {
+                                echo "NADA!";
+                            }
+
+                            $conn->close();
+                            ?>
+						
+						
 				</div>
 		</div>
 </section>
