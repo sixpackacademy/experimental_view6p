@@ -43,7 +43,10 @@ if ($role == 1) {
                     <a href="/dashboard" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
                 <li>
-                    <a href="/dashboard/produtos.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>produtos</span></a>
+                    <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                </li>
+                <li>
+                    <a href="/dashboard/produtos.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Produtos</span></a>
                 </li>
                 
                 <li>
@@ -77,7 +80,7 @@ if ($role == 1) {
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>NOme</th>
+                                <th>Nome</th>
                                 <th>Preço</th>
                                 <th>Ações</th>
                             </tr>
