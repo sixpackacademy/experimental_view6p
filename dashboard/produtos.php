@@ -75,6 +75,7 @@ if ($role == 1) {
                 <div class="recent-reviews">
                     <div class="header">
                         <h2>Produtos</h2>
+                         <button class="see-all">Ver Tudo →</button>
                     </div>
                     <table>
                         <thead>
