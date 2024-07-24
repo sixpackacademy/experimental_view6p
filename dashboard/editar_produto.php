@@ -21,34 +21,30 @@ if ($role == 1) {
     }
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
-        // Obter os dados do cliente para preencher o formulário
+        // Obter os dados do produto para preencher o formulário
         $id = intval($_GET['id']);
-        $sql = "SELECT username, first_name, last_name, email, phone_number, identification_number FROM users WHERE id = ?";
+        $sql = "SELECT nome, preco FROM produtos WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        $client = $result->fetch_assoc();
+        $produto = $result->fetch_assoc();
     } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Processar a atualização dos dados do cliente
+        // Processar a atualização dos dados do produto
         $id = intval($_POST['id']);
-        $username = $_POST['username'];
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $phone_number = $_POST['phone_number'];
-        $identification_number = $_POST['identification_number'];
+        $nome = $_POST['nome'];
+        $preco = $_POST['preco'];
 
-        $sql = "UPDATE users SET username = ?, first_name = ?, last_name = ?, email = ?, phone_number = ?, identification_number = ? WHERE id = ?";
+        $sql = "UPDATE produtos SET nome = ?, preco = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssssi", $username, $first_name, $last_name, $email, $phone_number, $identification_number, $id);
+        $stmt->bind_param("ssi", $nome, $preco, $id);
 
         if ($stmt->execute()) {
-            echo "Cliente atualizado com sucesso!";
+            echo "produto atualizado com sucesso!";
             header('Location: /dashboard');
             exit;
         } else {
-            echo "Erro ao atualizar o cliente: " . $stmt->error;
+            echo "Erro ao atualizar o produto: " . $stmt->error;
         }
     }
 
@@ -65,7 +61,7 @@ if ($role == 1) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Cliente</title>
+    <title>Editar produto</title>
         <style>
         body {
             font-family: Arial, sans-serif;
@@ -110,6 +106,14 @@ if ($role == 1) {
             border-radius: 4px;
             box-sizing: border-box;
         }
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
         input[type="email"] {
             width: calc(100% - 10px);
@@ -145,34 +149,18 @@ if ($role == 1) {
     </style>
 </head>
 <body>
-    <?php if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($client)) { ?>
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($produto)) { ?>
         <div class="container">
-            <h1>Editar Cliente</h1>
-            <form action="editar_cliente.php" method="POST">
+            <h1>Editar produto</h1>
+            <form action="editar_produto.php" method="POST">
                 <div class="form-group">
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" value="<?php echo htmlspecialchars($client['username']); ?>" required>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="first_name">First Name:</label>
-                    <input type="text" name="first_name" value="<?php echo htmlspecialchars($client['first_name']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" name="last_name" value="<?php echo htmlspecialchars($client['last_name']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" value="<?php echo htmlspecialchars($client['email']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone_number">Phone Number:</label>
-            <input type="text" name="phone_number" value="<?php echo htmlspecialchars($client['phone_number']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="identification_number">Identification Number:</label>
-                <input type="text" name="identification_number" value="<?php echo htmlspecialchars($client['identification_number']); ?>" required>
+                    <label for="preco">Preco:</label>
+                    <input type="number" name="preco" value="<?php echo htmlspecialchars($produto['preco']); ?>" required>
                 </div>
                 <button type="submit">Atualizar</button>
             </form>
@@ -182,7 +170,7 @@ if ($role == 1) {
             
         </form>
     <?php } else { ?>
-        <p>Cliente não encontrado.</p>
+        <p>produto não encontrado.</p>
     <?php } ?>
 </body>
 </html>

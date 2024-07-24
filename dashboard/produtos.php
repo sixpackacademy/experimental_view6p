@@ -23,10 +23,10 @@ if ($role == 1) {
     <div id="responseModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Responder ao Cliente</h2>
+            <h2>Responder ao produto</h2>
             <form id="responseForm">
-                <label for="clientEmail">Cliente:</label>
-                <input type="text" id="clientEmail" name="clientEmail" readonly>
+                <label for="produtomail">produto:</label>
+                <input type="text" id="produtomail" name="produtomail" readonly>
                 <label for="responseMessage">Mensagem:</label>
                 <textarea id="responseMessage" name="responseMessage" rows="4" required></textarea>
                 <button type="submit">Enviar</button>
@@ -43,10 +43,10 @@ if ($role == 1) {
                     <a href="/dashboard" class="" id="dashboard"><i class='bx bx-clipboard'></i><span>Dashboard</span></a>
                 </li>  
                 <li>
-                    <a href="/dashboard/clientes.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
+                    <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
                 </li>
                 <li>
-                    <a href="/dashboard/produtos.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Produtos</span></a>
+                    <a href="/dashboard/produtos.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Produtos</span></a>
                 </li>
                 
                 <li>
@@ -74,16 +74,16 @@ if ($role == 1) {
             <div class="reviews">
                 <div class="recent-reviews">
                     <div class="header">
-                        <h2>Clientes</h2>
+                        <h2>Produtos</h2>
+                         <button class="see-all" onclick="window.location.href='adicionar_produto.php'">Ver Tudo →</button>
+
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Cliente</th>
-                                <th>Identificacão</th>
-                                <th>Email</th>
-                                <th>Num Telemovel</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -91,17 +91,15 @@ if ($role == 1) {
                             <?php
                             require '../db/database_connection.php';
 
-                            $query = "SELECT id, identification_number, username, email, phone_number FROM users";
+                            $query = "SELECT id, nome, preco FROM produtos";
                             $result = $conn->query($query);
 
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
-                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>"; // Alterado para exibir o ID do cliente
-                                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['identification_number']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['phone_number']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>"; // Alterado para exibir o ID do produto
+                                    echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['preco']) . "</td>";
                                     echo '<td>
                                     <button class="approve-btn" data-client="' . htmlspecialchars($row['username']) . '">Editar</button>
                                     <button class="reject-btn" data-client-id="' . htmlspecialchars($row['id']) . '">Apagar</button>
@@ -137,7 +135,7 @@ if ($role == 1) {
             button.addEventListener('click', function (event) {
                 const clientRow = this.closest('tr');
                 const clientId = clientRow.querySelector('td:first-child').textContent;
-                window.location.href = `editar_cliente.php?id=${clientId}`;
+                window.location.href = `editar_produto.php?id=${clientId}`;
             });
         });
 
@@ -145,10 +143,10 @@ if ($role == 1) {
         button.addEventListener('click', function (event) {
             const clientRow = this.closest('tr');
             const clientId = this.getAttribute('data-client-id');
-            // Aqui você pode implementar a lógica para deletar o cliente, como um redirecionamento para uma página de confirmação de exclusão
+            // Aqui você pode implementar a lógica para deletar o produto, como um redirecionamento para uma página de confirmação de exclusão
             // Exemplo:
-            if (confirm(`Tem certeza que deseja apagar o cliente com ID ${clientId}?`)) {
-                window.location.href = `delete_cliente.php?id=${clientId}`;
+            if (confirm(`Tem certeza que deseja apagar o produto com ID ${clientId}?`)) {
+                window.location.href = `delete_produto.php?id=${clientId}`;
             }
         });
     });
