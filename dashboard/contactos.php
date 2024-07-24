@@ -70,8 +70,7 @@ if ($role == 1) {
             <div class="reviews">
                 <div class="recent-reviews">
                     <div class="header">
-                        <h2>Contactos Recentes</h2>
-                        <button class="see-all">Ver Tudo →</button>
+                        <h2>Mensagens</h2>
                     </div>
                     <table>
                         <thead>
@@ -86,7 +85,7 @@ if ($role == 1) {
                             <?php
                             require '../db/database_connection.php';
 
-                            $query = "SELECT cliente, email, mensagem FROM contactos";
+                            $query = "SELECT id, cliente, email, mensagem FROM contactos";
                             $result = $conn->query($query);
 
                             if ($result->num_rows > 0) {
@@ -95,7 +94,8 @@ if ($role == 1) {
                                     echo "<td>" . htmlspecialchars($row['cliente']) . "</td>";
                                     echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                                     echo "<td>" . htmlspecialchars($row['mensagem']) . "</td>";
-                                    echo '<td><button class="approve-btn" data-client="' . htmlspecialchars($row['cliente']) . '" data-service="Unknown">Responder</button></td>';
+                                    echo '<td><button class="approve-btn" data-client="' . htmlspecialchars($row['cliente']) . '" data-service="Unknown">Responder</button>';
+                                    echo '<button class="reject-btn" mensagem-id="' . htmlspecialchars($row['id']) . '">Apagar</button></td>';
                                     echo "</tr>";
                                 }
                             } else {
@@ -157,6 +157,22 @@ if ($role == 1) {
             document.querySelector('#reviews-section').classList.remove('hidden');
         });
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const deleteButtons = document.querySelectorAll('.reject-btn');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const mensagemRow = this.closest('tr');
+            const mensagemId = this.getAttribute('mensagem-id');
+            if (confirm(`Tem certeza que deseja apagar a mensagem com ID ${mensagemId}?`)) {
+                window.location.href = `delete_mensagem.php?id=${mensagemId}`;
+            }
+        });
+    });
+});
+</script>
 </body>
 
 </html>
