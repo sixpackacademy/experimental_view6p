@@ -144,7 +144,6 @@ $result2 = $conn->query($num_contacto);
                 <div class="new-customer">
                     <div class="header">
                         <h2>Novos Clientes</h2>
-                        <button class="see-all">Ver Tudo →</button>
                     </div>
                     <div class="customer-list">
                     <?php
@@ -156,7 +155,7 @@ $result2 = $conn->query($num_contacto);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<div class='customer-item'>";
-                                    echo "<img src='/assets/img/tanjil.jpg' alt='Customer'>";
+                                    echo "<img src='/assets/img/user-icon.png' alt='Customer'>";
                                     echo "<div class='customer-info'>";
                                     echo "<p>" . $row['username'] . "</p>";
                                     echo "<span>Contacts</span>";
