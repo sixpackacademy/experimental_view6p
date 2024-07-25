@@ -75,7 +75,7 @@ if ($role == 1) {
                 <div class="recent-reviews">
                     <div class="header">
                         <h2>Produtos</h2>
-                         <button class="see-all" onclick="window.location.href='adicionar_produto.php'">Ver Tudo →</button>
+                         <button class="see-all" onclick="window.location.href='adicionar_produto.php'">Adicionar produto →</button>
 
                     </div>
                     <table>
