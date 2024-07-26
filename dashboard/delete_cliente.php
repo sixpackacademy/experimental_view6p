@@ -43,7 +43,7 @@ if ($role == 1) {
     $conn->close();
 } else {
     echo "<h1>NAO TENS PERMISSAO!</h1>";
-    echo '<img src="/assets/img/permissao.jpeg">';
+
     exit;
 }
 ?>

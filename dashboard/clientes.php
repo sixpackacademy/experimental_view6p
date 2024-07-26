@@ -158,7 +158,6 @@ if ($role == 1) {
 } else { 
 ?>
     <h1>NAO TENS PERMISSAO!</h1>
-    <img src="/assets/img/permissao.jpeg">
 <?php 
 } 
 ?>
