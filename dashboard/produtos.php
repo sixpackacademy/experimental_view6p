@@ -21,7 +21,7 @@ if ($role == 1) {
 
 <body>
     <div id="responseModal" class="modal">
-        <div class="modal-content">
+         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Responder ao produto</h2>
             <form id="responseForm">

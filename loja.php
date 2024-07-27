@@ -189,7 +189,7 @@ a:hover {
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ml-auto">
-              <ul class="navbar-nav  ">
+               <ul class="navbar-nav  ">
   
                 
                 <?php
