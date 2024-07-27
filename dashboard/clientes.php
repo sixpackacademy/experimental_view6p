@@ -45,9 +45,6 @@ if ($role == 1) {
                 <li>
                     <a href="/dashboard/clientes.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
                 </li>
-                <li>
-                    <a href="/dashboard/produtos.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Produtos</span></a>
-                </li>
                 
                 <li>
                     <a href="/dashboard/contactos.php" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
@@ -74,7 +71,8 @@ if ($role == 1) {
             <div class="reviews">
                 <div class="recent-reviews">
                     <div class="header">
-                        <h2>Clientes</h2>
+                        <h2>Clientes Recentes</h2>
+                        <button class="see-all">Ver Tudo →</button>
                     </div>
                     <table>
                         <thead>
@@ -160,7 +158,6 @@ if ($role == 1) {
 } else { 
 ?>
     <h1>NAO TENS PERMISSAO!</h1>
-    <img src="/assets/img/permissao.jpeg">
 <?php 
 } 
 ?>
