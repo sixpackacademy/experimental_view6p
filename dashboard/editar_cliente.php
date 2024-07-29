@@ -55,7 +55,7 @@ if ($role == 1) {
     $conn->close();
 } else {
     echo "<h1>NAO TENS PERMISSAO!</h1>";
-    echo '<img src="/assets/img/permissao.jpeg">';
+
     exit;
 }
 ?>
@@ -66,120 +66,31 @@ if ($role == 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cliente</title>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-        h1 {
-            color: #333333;
-            margin-bottom: 20px;
-        }
-        form {
-            width: 100%;
-            text-align: left;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
-        input[type="text"] {
-            width: calc(100% - 10px);
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type="email"] {
-            width: calc(100% - 10px);
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        a {
-            display: block;
-            margin-top: 15px;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
+    <h1>Editar Cliente</h1>
     <?php if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($client)) { ?>
-        <div class="container">
-            <h1>Editar Cliente</h1>
-            <form action="editar_cliente.php" method="POST">
-                <div class="form-group">
-                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" value="<?php echo htmlspecialchars($client['username']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="first_name">First Name:</label>
-                    <input type="text" name="first_name" value="<?php echo htmlspecialchars($client['first_name']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" name="last_name" value="<?php echo htmlspecialchars($client['last_name']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" value="<?php echo htmlspecialchars($client['email']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone_number">Phone Number:</label>
+        <form action="editar_cliente.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="<?php echo htmlspecialchars($client['username']); ?>" required>
+            <br>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="<?php echo htmlspecialchars($client['first_name']); ?>" required>
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" value="<?php echo htmlspecialchars($client['last_name']); ?>" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="<?php echo htmlspecialchars($client['email']); ?>" required>
+            <br>
+            <label for="phone_number">Phone Number:</label>
             <input type="text" name="phone_number" value="<?php echo htmlspecialchars($client['phone_number']); ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="identification_number">Identification Number:</label>
-                <input type="text" name="identification_number" value="<?php echo htmlspecialchars($client['identification_number']); ?>" required>
-                </div>
-                <button type="submit">Atualizar</button>
-            </form>
-            <a href="{{ url_for('dashboard_page') }}">Voltar ao Dashboard</a>
-        </div>
-            
-            
+            <br>
+            <label for="identification_number">Identification Number:</label>
+            <input type="text" name="identification_number" value="<?php echo htmlspecialchars($client['identification_number']); ?>" required>
+            <br>
+            <button type="submit">Atualizar</button>
         </form>
     <?php } else { ?>
         <p>Cliente não encontrado.</p>
