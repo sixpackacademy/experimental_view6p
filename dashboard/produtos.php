@@ -75,7 +75,7 @@ if ($role == 1) {
                 <div class="recent-reviews">
                     <div class="header">
                         <h2>Produtos</h2>
-                         <button class="see-all" onclick="window.location.href='adicionar_produto.php'">Ver Tudo →</button>
+                         <button class="see-all" onclick="window.location.href='adicionar_produto.php'">Adicionar →</button>
 
                     </div>
                     <table>
@@ -109,7 +109,7 @@ if ($role == 1) {
                                 }
                             }
                              else {
-                                echo "<tr><td colspan='4'>Nenhum contacto encontrado</td></tr>";
+                                echo "<tr><td colspan='4'>Nenhum produto encontrado</td></tr>";
                             }
 
                             $conn->close();

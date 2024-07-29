@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+  $role = $_SESSION['role'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" >
 <head><!-- slider stylesheet -->

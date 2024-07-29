@@ -53,11 +53,7 @@ if ($role == 1) {
             $uploadOk = 0;
         }
 
-        // Permitir certos formatos de arquivo
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-            echo "Desculpe, apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
-            $uploadOk = 0;
-        }
+       
 
         // Verificar se $uploadOk está definido como 0 por um erro
         if ($uploadOk == 0) {
