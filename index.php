@@ -59,6 +59,7 @@ if (isset($_SESSION['user_id'])) {
                     echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="login.php">Log In</a>';
                     echo '</li>';
+
                   } else {
                     echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="logout.php">Log Out</a>';
@@ -71,6 +72,7 @@ if (isset($_SESSION['user_id'])) {
                     echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="profile.php"> Profile</a>';
                     echo '</li>';
+
                   }
                   ?>
                 </li>
@@ -80,6 +82,9 @@ if (isset($_SESSION['user_id'])) {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contactenos"> Contacte nos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="loja.php">Loja</a>
                 </li>
                
                

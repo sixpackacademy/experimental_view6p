@@ -45,13 +45,14 @@ if ($role == 1) {
                 <li>
                     <a href="/dashboard/clientes.php" class="" id="accounts"><i class='bx bxs-user-account'></i><span>Clientes</span></a>
                 </li>
-                <li>
-                    <a href="/dashboard/produtos.php" class="active" id="accounts"><i class='bx bxs-user-account'></i><span>Produtos</span></a>
-                </li>
+                
                 
                 <li>
                     <a href="/dashboard/contactos.php" class="" id="reviews"><i class='bx bxs-comment-detail'></i><span>Contactos</span></a>
                 </li>
+                <li>
+                <a href="/dashboard/produtos.php" class="active" id="reviews"><i class='bx bxs-comment-detail'></i><span>Produtos</span></a>
+            </li>
             </ul>
         </div>
     </div>
