@@ -2,7 +2,9 @@
 session_start();
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
+  $role = $_SESSION['role'];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -189,7 +191,7 @@ a:hover {
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ml-auto">
-              <ul class="navbar-nav  ">
+               <ul class="navbar-nav  ">
   
                 
                 <?php
